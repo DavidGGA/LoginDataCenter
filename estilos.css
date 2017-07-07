@@ -1,0 +1,114 @@
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+ 
+}
+
+body {
+    background: #F1F0EF;
+    display: flex;
+    min-height: 97vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+
+}
+
+#maia{
+    height: 100px;
+    position:absolute;
+    bottom:5px;
+    right:10px;
+    
+}
+
+.Contenido{
+    padding: 0px;
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -170px;
+    
+}
+
+#LogoDC{
+    
+    width: 300px;
+    height: 100px;
+    display:block;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 10px;
+
+    
+}
+
+form{
+    
+    display:block;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(230,230,230,0.4);
+    padding: 20px 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 20px;
+    box-sizing: border-box;
+    clear: both;
+
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba( 104, 104, 104, 0.8 )
+    font-family: arial;
+
+}
+
+input {
+    display: block;
+    padding: 5px 5px 5px 5px;
+    width: 90%;
+    margin: 5% 5%;
+    font-size: 20px;
+}
+
+input[type="submit"]{
+    background: #101d5b;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+    font-family: arial ;
+    font-size: 20px;
+
+}
+
+input[type="submit"]: hover {
+    opacity: 0.5;
+}
+
+input[type="submit"]: active {
+    transform: scale(0.95);
+}
+
+@media (max-width:768px){
+    form {
+        width: 75%;
+    }
+}
+
+@media (max-width:480px){
+    form {
+        widows: 95%;
+    }
+}
+
