@@ -28,7 +28,7 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_array(MYSQLI_ASSOC);
         if ($password == $row['usePassword']) {
-        
+
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['start'] = time();
@@ -40,13 +40,13 @@
                 $row = $client->fetch_array(MYSQLI_ASSOC);
                 $clientName = $row['cliName'];
             }
-            
+
             $sql3 = "SELECT product.proName, client.cliName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE cliName = $clientName";
             $product = $conexion->query($sql3);
-            
+
             echo($twig->render(
                 'product.html',
-                array('email' => $clientName, 'product' => $product)
+                array('email' => $clientName, 'products' => array($product))
             ));
 
         }

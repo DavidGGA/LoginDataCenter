@@ -23,12 +23,12 @@
                     <canvas id="lines"></canvas>
                     <div class="Contenido">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
-                        <h1>Productos</h1>
+                        <h1>Products for {{ email }} user</h1>
                         <ul>
-                            {% for datorama_link in datorama_links %}
+                            {% for product in products %}
                                 <li>
-                                    <a href="{{ datorama_link }}">
-                                        {{ datorama_link }}
+                                    <a href=""> mierda
+                                        {{ product.proName }}
                                     </a>
                                 </li>
                             {% endfor %}
