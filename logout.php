@@ -2,6 +2,5 @@
     session_start();
     unset ($SESSION['username']);
     session_destroy();
-
-    header('Location: http://localhost/LoginDataCenter/index.html');
+    header('Location: index.php');
 ?>
