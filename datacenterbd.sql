@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2017 a las 16:57:17
+-- Tiempo de generación: 10-07-2017 a las 21:01:52
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -33,6 +33,14 @@ CREATE TABLE `client` (
   `cliName` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `client`
+--
+
+INSERT INTO `client` (`cliID`, `cliName`) VALUES
+('1', 'Tigo'),
+('2', 'Wingo');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +52,15 @@ CREATE TABLE `product` (
   `proName` varchar(40) NOT NULL,
   `fk_cliPID` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `product`
+--
+
+INSERT INTO `product` (`proID`, `proName`, `fk_cliPID`) VALUES
+(1, 'ecommerce', '1'),
+(2, 'apps', '1'),
+(3, 'Wingo', '2');
 
 -- --------------------------------------------------------
 
@@ -58,6 +75,17 @@ CREATE TABLE `user` (
   `useOnline` tinyint(1) NOT NULL,
   `fk_cliID` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`useEmail`, `usePassword`, `useStatus`, `useOnline`, `fk_cliID`) VALUES
+('', '1', 1, 1, '1'),
+('1', '1', 1, 1, '1'),
+('daniel.valencia@ariadnacg.com', '123', 1, 1, '1'),
+('david.gallego@ariadnacg.com', '123', 1, 1, '1'),
+('juan.espinosa@ariadnacg.com', '123', 1, 1, '2');
 
 --
 -- Índices para tablas volcadas
