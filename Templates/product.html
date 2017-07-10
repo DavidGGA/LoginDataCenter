@@ -1,28 +1,48 @@
 <?php
-  include_once("session.php");
+    include_once("session.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Productos</title>
-  </head>
+<!doctype html>
+<html class="no-js" lang="es-ES">
 
-  <body>
-    <h1>PRODUCTOS</h1>
-    <p>Aqui van los enlaces que le permitirian al usuario
-    seleccionar el dashboard o link de drive.</p>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <ul>
-      <li> {{ email }} </li>
-      <li>DashBoard1</li>
-      <li>DashBoard2</li>
-      <li>Drive Sheet</li>
-      <li>Drive doc</li>
-    </ul>
+    <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
+    <link rel="stylesheet" media="all" href="Style.css" />
+    <link rel="stylesheet" href="estilos.css">
+    <script src="./static/js/primero.js"></script>
+</head>
+    <body itemscope>
 
-    <br>
-    <br>
-    <a href=./logout.php>Cerrar Sesion</a>
-  </body>
+        <section class="splash tri">
+            <div class="gradient"></div>
+            <article>
+                <div id="experience">
+                    <canvas id="lines"></canvas>
+                    <div class="Contenido">
+                        <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
+                        <h1>Productos</h1>
+                        <ul>
+                            {% for datorama_link in datorama_links %}
+                                <li>
+                                    <a href="{{ datorama_link }}">
+                                        {{ datorama_link }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <a href=./logout.php>Cerrar Sesion</a>
+                </div>
+            </article>
+        </section>
+
+        <script src="./static/js/Segundo.js"></script>
+        <script src="./static/js/Tercero.js"></script>
+        <script src="./static/js/Cuarto.js"></script>
+
+    </body>
+
 </html>

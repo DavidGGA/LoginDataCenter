@@ -81,7 +81,6 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`useEmail`, `usePassword`, `useStatus`, `useOnline`, `fk_cliID`) VALUES
-('', '1', 1, 1, '1'),
 ('1', '1', 1, 1, '1'),
 ('daniel.valencia@ariadnacg.com', '123', 1, 1, '1'),
 ('david.gallego@ariadnacg.com', '123', 1, 1, '1'),
