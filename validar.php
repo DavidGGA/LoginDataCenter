@@ -1,22 +1,46 @@
 <?php
-    $usuario=@$_POST['Usuario'];
-    $clave=@$_POST['Clave'];
-
-    //conectar a la base de datos
-    $conexion=mysqli_connect("localhost", "root", "", "datacenter");
-    $consulta="SELECT * FROM user WHERE useEmail= '$usuario' and usePassword='$clave'";
-    $resultado=mysqli_query($conexion, $consulta);
-
-    $fila=mysqli_num_rows($resultado);
-
-    if ($fila>0){
-        while ($row = mysqli_fetch_row($resultado))
-        {
-            echo $row[0];
-        }
-    } else {
-        header("location:index.html");
-    }
-    mysqli_free_result($resultado);
-    mysqli_close($conexion);
+session_start();
 ?>
+
+<?php
+
+$host_db = "localhost";
+$user_db = "root";
+$pass_db = "";
+$db_name = "datacenterbd";
+$tbl_name = "user";
+
+$conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
+
+if ($conexion->connect_error) {
+ die("La conexion falló: " . $conexion->connect_error);
+}
+
+$username = $_POST['usuario'];
+$password = $_POST['clave'];
+ 
+$sql = "SELECT * FROM $tbl_name WHERE useEmail = '$username'";
+
+$result = $conexion->query($sql);
+
+
+if ($result->num_rows > 0) {     
+ }
+ $row = $result->fetch_array(MYSQLI_ASSOC);
+ if ($password == $row['usePassword']) { 
+ 
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
+    $_SESSION['start'] = time();
+    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+
+    echo "Bienvenido! " . $_SESSION['username'];
+    echo "<br><br><a href=productos.php>Productos</a>"; 
+
+ } else { 
+   echo "Username o Password estan incorrectos.";
+
+   echo "<br><a href='index.html'>Volver a Intentarlo</a>";
+ }
+ mysqli_close($conexion); 
+ ?>
