@@ -3,6 +3,10 @@ session_start();
 ?>
 
 <?php
+require_once 'Twig-1.34.4\lib\Twig/Autoloader.php';
+Twig_Autoloader::register();
+$loader = new Twig_Loader_Filesystem('Templates');
+$twig = new Twig_Environment($loader);
 
 $host_db = "localhost";
 $user_db = "root";
@@ -16,8 +20,8 @@ if ($conexion->connect_error) {
  die("La conexion falló: " . $conexion->connect_error);
 }
 
-$username = $_POST['usuario'];
-$password = $_POST['clave'];
+$username = @$_POST['usuario'];
+$password = @$_POST['clave'];
  
 $sql = "SELECT * FROM $tbl_name WHERE useEmail = '$username'";
 
@@ -34,13 +38,14 @@ if ($result->num_rows > 0) {
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
-    echo "Bienvenido! " . $_SESSION['username'];
-    echo "<br><br><a href=productos.php>Productos</a>"; 
+    echo($twig->render(
+        'profile.html',
+        array('email' => $username)
+    ));
 
- } else { 
-   echo "Username o Password estan incorrectos.";
-
-   echo "<br><a href='index.html'>Volver a Intentarlo</a>";
+ } else {
+   echo($twig->render('home.html'));
  }
  mysqli_close($conexion); 
  ?>
+
