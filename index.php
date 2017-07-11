@@ -41,12 +41,13 @@
                 $clientName = $row['cliName'];
             }
 
-            $sql3 = "SELECT product.proName, client.cliName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE cliName = $clientName";
+            $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$clientName'";
             $product = $conexion->query($sql3);
+            $product2 = $product->fetch_array(MYSQLI_ASSOC);
 
             echo($twig->render(
                 'product.html',
-                array('email' => $clientName, 'products' => array($product))
+                array('email' => $clientName, 'products' => $product)
             ));
 
         }
