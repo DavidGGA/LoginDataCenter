@@ -1,19 +1,19 @@
 <?php
-    include_once("session.php");
+    include_once("../session.php");
 ?>
 
 <!doctype html>
 <html class="no-js" lang="es-ES">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
-    <link rel="stylesheet" media="all" href="Style.css" />
-    <link rel="stylesheet" href="estilos.css">
-    <script src="./static/js/primero.js"></script>
-</head>
+        <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
+        <link rel="stylesheet" media="all" href="./static/css/Style.css" />
+        <link rel="stylesheet" href="./static/css/estilos.css">
+        <script src="./static/js/primero.js"></script>
+    </head>
     <body itemscope>
 
         <section class="splash tri">
@@ -23,11 +23,11 @@
                     <canvas id="lines"></canvas>
                     <div class="Contenido">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
-                        <h1>Products for {{ email }} user</h1>
+                        <h1>Products for {{ client }} user</h1>
                         <ul>
                             {% for product in products %}
                                 <li>
-                                    <a href="">
+                                    <a href="maia/{{ client }}/{{ product.proName }}">
                                         {{ product.proName }}
                                     </a>
                                 </li>
