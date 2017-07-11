@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    require_once 'renderizer.php';
     require_once 'static/lib/twig/lib/Twig/Autoloader.php';
     Twig_Autoloader::register();
     $loader = new Twig_Loader_Filesystem('Templates');
@@ -44,14 +45,19 @@
             $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$clientName'";
             $product = $conexion->query($sql3);
 
-            echo($twig->render(
+            renderize(
                 'product.html',
-                array('client' => $clientName, 'products' => $product)
-            ));
+                array(
+                    'client' => $clientName,
+                    'products' => $product,
+                    'session' => $_SESSION['loggedin'],
+                    'expire' => $_SESSION['expire']
+                )
+            );
 
         }
     } else {
-        echo($twig->render('home.html'));
+        renderize('home.html', array());
     }
     mysqli_close($conexion); 
  ?>
