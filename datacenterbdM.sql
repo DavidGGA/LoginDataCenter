@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2017 a las 21:01:52
+-- Tiempo de generación: 11-07-2017 a las 21:21:13
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -60,7 +60,7 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`proID`, `proName`, `fk_cliPID`) VALUES
 (1, 'ecommerce', '1'),
 (2, 'apps', '1'),
-(3, 'Wingo', '2');
+(3, 'reporte_General', '2');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`useEmail`, `usePassword`, `useStatus`, `useOnline`, `fk_cliID`) VALUES
 ('1', '1', 1, 1, '1'),
 ('daniel.valencia@ariadnacg.com', '123', 1, 1, '1'),
-('david.gallego@ariadnacg.com', '123', 1, 1, '1'),
+('david.gallego@ariadnacg.com', '123', 1, 1, '2'),
 ('juan.espinosa@ariadnacg.com', '123', 1, 1, '2');
 
 --

@@ -34,7 +34,7 @@
             $_SESSION['start'] = time();
             $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
             
-            $sql2 = "SELECT user.useEmail, client.cliName FROM user INNER JOIN client ON user.fk_cliID = client.cliID WHERE user.useEmail = $username";
+            $sql2 = "SELECT user.useEmail, client.cliName FROM user INNER JOIN client ON user.fk_cliID = client.cliID WHERE user.useEmail = '$username'";
             $client = $conexion->query($sql2);
             if ($client->num_rows > 0) {
                 $row = $client->fetch_array(MYSQLI_ASSOC);
