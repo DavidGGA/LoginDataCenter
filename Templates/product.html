@@ -21,6 +21,7 @@
                     <canvas id="lines"></canvas>
                     <div class="Contenido">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
+                        <a class="button" href=./logout.php>Cerrar Sesion</a>
                         <h1>Products for {{ client }} user {{ username }}</h1>
                         	<section class="products">
                                   {% for product in products %}
@@ -47,7 +48,7 @@
                             </section>
 
                     </div>
-                    <a class="button" href=./logout.php>Cerrar Sesion</a>
+                    
                 </div>
             </article>
         </section>
