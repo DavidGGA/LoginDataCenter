@@ -19,7 +19,7 @@
             <article>
                 <div id="experience">
                     <canvas id="lines"></canvas>
-                    <div class="Contenido">
+                    <div class="Contenido" style="text-align: center">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
                         <a class="button" href=./logout.php>Cerrar Sesion</a>
                         <h1>Products for {{ client }} user {{ username }}</h1>
@@ -28,7 +28,6 @@
                                        <article class="product">
                                         <div class="descripcion">
                                                <div style="text-align: center">
-
                                                 <form action="templates/{{ client }}/{{ product.proName }}/index.php" method="POST">
                                                     <input type="hidden" name="username" value="{{ username }}" />
                                                     <input type="hidden" name="expires" value="{{ expires }}" />
