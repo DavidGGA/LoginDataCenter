@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    require_once 'renderizer.php';
     require_once 'static/lib/twig/lib/Twig/Autoloader.php';
     Twig_Autoloader::register();
     $loader = new Twig_Loader_Filesystem('Templates');
@@ -26,38 +25,57 @@
 
     $result = $conexion->query($sql);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-        if ($password == $row['usePassword']) {
 
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $username;
-            $_SESSION['start'] = time();
-            $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
-            
-            $sql2 = "SELECT user.useEmail, client.cliName FROM user INNER JOIN client ON user.fk_cliID = client.cliID WHERE user.useEmail = '$username'";
-            $client = $conexion->query($sql2);
-            if ($client->num_rows > 0) {
-                $row = $client->fetch_array(MYSQLI_ASSOC);
-                $clientName = $row['cliName'];
-            }
-
-            $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$clientName'";
-            $product = $conexion->query($sql3);
-
-            renderize(
-                'product.html',
-                array(
-                    'client' => $clientName,
-                    'products' => $product,
-                    'session' => $_SESSION['loggedin'],
-                    'expire' => $_SESSION['expire']
-                )
-            );
-
-        }
+    $now = time();
+    if($now < @$_POST['expires']) {
+        $username = @$_POST['username'];
+        $expires = @$_POST['expires'];
+        $client = @$_POST['client'];
+        $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$client'";
+        $product = $conexion->query($sql3);
+        echo($twig->render(
+            'product.html',
+            array(
+                'client' => $client,
+                'products' => $product,
+                'expires' => $expires,
+                'username' => $username
+            )
+        ));
     } else {
-        renderize('home.html', array());
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            if ($password == $row['usePassword']) {
+
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $username;
+                $_SESSION['start'] = time();
+                $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+                
+                $sql2 = "SELECT user.useEmail, client.cliName FROM user INNER JOIN client ON user.fk_cliID = client.cliID WHERE user.useEmail = '$username'";
+                $client = $conexion->query($sql2);
+                if ($client->num_rows > 0) {
+                    $row = $client->fetch_array(MYSQLI_ASSOC);
+                    $clientName = $row['cliName'];
+                }
+
+                $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$clientName'";
+                $product = $conexion->query($sql3);
+
+                echo($twig->render(
+                    'product.html',
+                    array(
+                        'client' => $clientName,
+                        'products' => $product,
+                        'expires' => time() + (5 * 60),
+                        'username' => $username
+                    )
+                ));
+
+            }
+        } else {
+            echo($twig->render('home.html', array()));
+        }
     }
     mysqli_close($conexion); 
  ?>

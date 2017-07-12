@@ -19,24 +19,22 @@
                     <canvas id="lines"></canvas>
                     <div class="Contenido">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
-                        <h1>Products for {{ client }} user</h1>
-                        {% if session == 1 and date().timestamp <=  expire %}
-                            <ul>
-                                {% for product in products %}
-                                    <li>
-                                        <form action="./renderizer.php" method="POST">
-                                            <input type="hidden" name="loggedin" value="{{ session }}" />
-                                            <input type="hidden" name="expire" value="{{ expire }}" />
-                                            <input type="hidden" name="client" value="{{ client }}" />
-                                            <input type="hidden" name="product" value="{{ product.proName }}" />
-                                            <a href="#" onclick="this.parentNode.submit()">
-                                                {{ product.proName }}
-                                            </a>
-                                        </form>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
+                        <h1>Products for {{ client }} user {{ username }}</h1>
+                        <ul>
+                            {% for product in products %}
+                                <li>
+                                    <form action="templates/{{ client }}/{{ product.proName }}/index.php" method="POST">
+                                        <input type="hidden" name="username" value="{{ username }}" />
+                                        <input type="hidden" name="expires" value="{{ expires }}" />
+                                        <input type="hidden" name="client" value="{{ client }}" />
+                                        <input type="hidden" name="product" value="{{ product.proName }}" />
+                                        <a onclick="this.parentNode.submit()">
+                                            {{ product.proName }}
+                                        </a>
+                                    </form>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     <a href=./logout.php>Cerrar Sesion</a>
                 </div>
