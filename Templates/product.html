@@ -8,6 +8,8 @@
         <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
         <link rel="stylesheet" media="all" href="./static/css/Style.css" />
         <link rel="stylesheet" href="./static/css/estilos.css">
+        
+        <link rel="stylesheet" media="all" href="./static/css/products.css" />
         <script src="./static/js/primero.js"></script>
     </head>
     <body itemscope>
@@ -20,23 +22,32 @@
                     <div class="Contenido">
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
                         <h1>Products for {{ client }} user {{ username }}</h1>
-                        <ul>
-                            {% for product in products %}
-                                <li>
-                                    <form action="templates/{{ client }}/{{ product.proName }}/index.php" method="POST">
-                                        <input type="hidden" name="username" value="{{ username }}" />
-                                        <input type="hidden" name="expires" value="{{ expires }}" />
-                                        <input type="hidden" name="client" value="{{ client }}" />
-                                        <input type="hidden" name="product" value="{{ product.proName }}" />
-                                        <a onclick="this.parentNode.submit()">
-                                            {{ product.proName }}
-                                        </a>
-                                    </form>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                        	<section class="products">
+                                  {% for product in products %}
+                                       <article class="product">
+                                        <div class="descripcion">
+                                               <div style="text-align: center">
+
+                                                <form action="templates/{{ client }}/{{ product.proName }}/index.php" method="POST">
+                                                    <input type="hidden" name="username" value="{{ username }}" />
+                                                    <input type="hidden" name="expires" value="{{ expires }}" />
+                                                    <input type="hidden" name="client" value="{{ client }}" />
+                                                    <input type="hidden" name="product" value="{{ product.proName }}" />
+                                                    <a class="productName" onclick="this.parentNode.submit()">
+                                                    <figure class="imagen">
+                                                        <img src="./static/img/{{ product.proName }}.png">
+                                                    </figure>
+                                                     <p>{{ product.proName }}</p>
+                                                    </a>
+                                                </form>
+                                                </div>
+                                        </div>
+                                    </article>
+                                {% endfor %}   
+                            </section>
+
                     </div>
-                    <a href=./logout.php>Cerrar Sesion</a>
+                    <a class="button" href=./logout.php>Cerrar Sesion</a>
                 </div>
             </article>
         </section>

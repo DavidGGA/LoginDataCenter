@@ -29,7 +29,7 @@
                                 <input type="hidden" name="expires" value="'.$expires.'" />
                                 <input type="hidden" name="client" value="'.$client.'" />
                                 <input type="hidden" name="product" value="'.$product.'" />
-                                <input id="boton" type="submit" value="Return to products">
+                                <input id="boton" class="button" type="submit" value="Return to products">
                             </form>
                                 <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=fe235e1f-0329-4d7b-9ff1-8acfd41504c4" style="border:0px" width="1100px" height="800px"></iframe>
                             </div>

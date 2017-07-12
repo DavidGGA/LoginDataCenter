@@ -30,7 +30,7 @@
                                 <input type="hidden" name="expires" value="'.$expires.'" />
                                 <input type="hidden" name="client" value="'.$client.'" />
                                 <input type="hidden" name="product" value="'.$product.'" />
-                                <input id="boton" type="submit" value="Return to products">
+                                <input class="button" id="boton" type="submit" value="Return to products">
                             </form>
                             <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=9bed9241-fe73-497a-8fb6-fa3677c3b6ff" style="border:0px" width="1100px" height="800px"></iframe>
                             </div>
@@ -48,11 +48,11 @@
                 </html>
             ';
         } else {
-            echo "Su sesion a terminado, <a href='../../../index.php'> Necesita Hacer Login</a>";
+            echo "Su sesion a terminado, <a class='button' href='../../../index.php'> Necesita Hacer Login</a>";
         }
     } else {
         echo "Esta pagina es solo para usuarios registrados";
-        echo "<br><a href='../../../index.php'>Login</a>";
+        echo "<br><a class='button' href='../../../index.php'>Login</a>";
         exit;
     }
 ?>
