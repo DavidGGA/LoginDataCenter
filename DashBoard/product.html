@@ -6,23 +6,175 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
-        <link rel="stylesheet" media="all" href="./static/css/Style.css" />
-        <link rel="stylesheet" href="./static/css/estilos.css">
+        
         
         <link rel="stylesheet" media="all" href="./static/css/products.css" />
-        <script src="./static/js/primero.js"></script>
-    </head>
-    <body itemscope>
 
-        <section class="splash tri">
-            <div class="gradient"></div>
-            <article>
-                <div id="experience">
-                    <canvas id="lines"></canvas>
-                    <div class="Contenido" style="text-align: center">
+    </head>
+    <body>
                         <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
                         <a class="button" href=./logout.php>Cerrar Sesion</a>
-                        <h1>Products for {{ client }} user {{ username }}</h1>
+
+
+    </body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>
+		Maia DataCenter
+		</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/puls4.css" />
+		  <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="css/materialize.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="fonts/icomoon.ttf">
+
+     
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<img src="imagenes/logo.png" alt="pushek"/>
+			</div>
+			<div class="titular">
+				<h1 class="titulo">
+				MAIA Data Center
+				</h1>
+				<div>
+					<a class="filtro" href="#">
+						Ariadna
+					</a>
+					<a class="publicar" href="#"><i class="material-icons">settings_power</i>
+						SALIR
+					</a>
+				</div>
+			</div>
+			
+		</header>
+		<nav>
+			<ul class="menu">
+				<li> <a href="#">Productos</a> </li>
+				<li> <a href="#">Cliente</a> </li>
+			</ul>
+		</nav>
+		<section class="posts">
+			<ul class="collapsible popout" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header"><i class="material-icons">view_quilt</i>Primero</div>
+					<div class="collapsible-body"><article class="post">
+				<div class="descripcion">
+					<figure class="imagen">
+						<img src="imagenes/foto.png">
+					</figure>
+					<div class="detalles">
+						<h2 class="">CLIENTE
+						</h2>
+						<p class="autor">
+							por <a href="#">Sebastian Espinosa</a>
+						</p>
+						<a class="tag">CS3</a>
+						<p class="fecha">Hace <strong>20min</strong></p>
+					</div>
+				</div>
+				<div class="acciones">
+					<div class="votos">
+						<a class="up"href="#"></a>
+						<span class="total">154</span>
+						<a class="down" href="#"></a>
+					</div>
+					<div class="datos">
+						<a class="comentarios"href="#">
+							12
+						</a>
+						<a class="estrellita"href="#">
+							
+						</a>
+					</div>
+				</div>
+			</article></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">web</i>Second</div>
+					<div class="collapsible-body"><article class="post">
+				<div class="descripcion">
+					<figure class="imagen">
+						<img src="imagenes/foto.png">
+					</figure>
+					<div class="detalles">
+						<h2 class="">CLIENTE
+						</h2>
+						<p class="autor">
+							por <a href="#">Sebastian Espinosa</a>
+						</p>
+						<a class="tag">CS3</a>
+						<p class="fecha">Hace <strong>20min</strong></p>
+					</div>
+				</div>
+				<div class="acciones">
+					<div class="votos">
+						<a class="up"href="#"></a>
+						<span class="total">154</span>
+						<a class="down" href="#"></a>
+					</div>
+					<div class="datos">
+						<a class="comentarios"href="#">
+							12
+						</a>
+						<a class="estrellita"href="#">
+							
+						</a>
+					</div>
+				</div>
+			</article></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">web</i>Third</div>
+					<div class="collapsible-body"><article class="post">
+				<div class="descripcion">
+					<figure class="imagen">
+						<img src="imagenes/foto.png">
+					</figure>
+					<div class="detalles">
+						<h2 class="">CLIENTE
+						</h2>
+						<p class="autor">
+							por <a href="#">Sebastian Espinosa</a>
+						</p>
+						<a class="tag">CS3</a>
+						<p class="fecha">Hace <strong>20min</strong></p>
+					</div>
+				</div>
+				<div class="acciones">
+					<div class="votos">
+						<a class="up"href="#"></a>
+						<span class="total">154</span>
+						<a class="down" href="#"></a>
+					</div>
+					<div class="datos">
+						<a class="comentarios"href="#">
+							12
+						</a>
+						<a class="estrellita"href="#">
+							
+						</a>
+					</div>
+				</div>
+			</article></div>
+				</li>
+				<li>
+      <div class="collapsible-header"><i class="material-icons">web</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+                                <h1>Products for {{ client }} user {{ username }}</h1>
                         	<section class="products">
                                   {% for product in products %}
                                        <article class="product">
@@ -43,19 +195,44 @@
                                                 </div>
                                         </div>
                                     </article>
+                                    <article class="product">
+			<div class="descripcion">
+				<figure class="imagen">
+					<img src="imagenes/Dash.jpg">
+				</figure>
+				<div class="detalles">
+				<h2 class="">Product Name
+				</h2>
+				<p class="cliente">
+					<a href="#">Client Name</a>
+				</p>
+				</div>
+			</div>
+		</article>   
+                                    
                                 {% endfor %}   
                             </section>
-
-                    </div>
-                    
-                </div>
-            </article>
-        </section>
-
-        <script src="./static/js/Segundo.js"></script>
-        <script src="./static/js/Tercero.js"></script>
-        <script src="./static/js/Cuarto.js"></script>
-
-    </body>
-
+    </li>
+			</ul>	
+			
+		</section>
+		<footer>
+			<h3>
+			<strong>Powered By MAIA Data Center</strong>
+			<span class="mejor">
+				maiadatacenter.co 2017
+			</span>
+			</h3>
+		</footer>
+		     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+              <!-- Compiled and minified JavaScript -->
+              <script src="js/materialize.js"></script>
+            <script>
+                 $(document).ready(function(){
+                    $('.collapsible').collapsible();
+                    });
+        
+            </script>
+	</body>
 </html>
+
