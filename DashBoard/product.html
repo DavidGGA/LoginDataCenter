@@ -22,24 +22,18 @@
                 <img src="./static/img/DataCenterLogo.png" alt="DataCenter" />
             </div>
             <div class="titular">
-                <h1 class="titulo">
-                MAIA Data Center
-                </h1>
                 <div>
-                    <p class="filtro">
-                        Ariadna
-                    </p>
                     <a class="publicar" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
                 </div>
             </div>
         </header>
         <nav>
-            <ul class="menu">
-                <li> <a href="#">Products for {{ client }} user {{ username }}</a> </li>
-            </ul>
+<h4 class="titulo">Products for {{ client }} user {{ username }}</h4>
         </nav>
         <section class="posts">
-            <ul class="collapsible popout" data-collapsible="accordion">
+
+    <div class="row">
+            <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
                 {% for product in products %}
                     <li>
                         <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product.proName }}</div>
@@ -57,14 +51,12 @@
                                                 <img src="./static/img/{{ product.proName }}.png">
                                             </figure>
                                             <div class="detalles">
-                                                <h2 class="">{{ product.proName }}
-                                                </h2>
-                                                <p class="autor">
-                                                    for <a href="#"> {{ client }}</a>
-                                                </p>
+                                            <br><br>
+                                                <h5 class="">{{ product.proName }}
+                                                </h5>
                                                 <!--
                                                 <a class="tag">CS3</a>
-                                                                                <p class="fecha">Hace <strong>20min</strong></p>
+                                                <p class="fecha">Hace <strong>20min</strong></p>
                                                 -->
                                             </div>
                                         </a>
@@ -76,8 +68,9 @@
                     </li>
                 {% endfor %}
             </ul>
+        </div>
         </section>
-
+        
         <!-- Compiled and minified JavaScript -->
         <script src="./static/js/materialize.js"></script>
         <script>
