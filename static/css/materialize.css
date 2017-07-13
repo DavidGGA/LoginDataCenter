@@ -6019,7 +6019,7 @@ input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #000000;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -6315,7 +6315,7 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field label {
-  color: #ffffff;
+  color: black;
   position: absolute;
   top: 0.8rem;
   left: 0;
