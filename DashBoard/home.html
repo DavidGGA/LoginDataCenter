@@ -1,39 +1,58 @@
 <!doctype html>
 <html class="no-js" lang="es-ES">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
-    <link rel="stylesheet" media="all" href="./static/css/Style.css" />
-    <link rel="stylesheet" href="./static/css/estilos.css">
-    <script src="./static/js/primero.js"></script>
-</head>
-    <body itemscope>
-
-        <section class="splash tri">
-            <div class="gradient"></div>
-            <article>
-                <div id="experience">
-                    <canvas id="lines"></canvas>
-                    <div class="Contenido">
-                        <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
-                        <form action="./index.php" method="POST">
-                            <h2>Login</h2>
-                            <input type="text" placeholder="&#128272; Usuario" name="usuario">
-                            <input type="password" placeholder="&#128272; Contraseña" name="clave">
-                            <input id="boton" type="submit" value="Ingresar">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
+        <link rel="stylesheet" href="./static/css/materialize.css">
+        <script src="./static/js/materialize.js"></script>
+        <script type="text/javascript">
+            function submitForm(){
+                document.getElementById("loginForm").submit();
+            }
+        </script>
+    </head>
+    <body background="./static/img/wallpaper.jpg">
+        <div class="container">
+            <div class="row">
+                <div >
+                    <div class="row">
+                        <img src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
+                        <h2 class="center-align">Login</h2>
+                        <form action="./index.php" method="POST" id="loginForm">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate" name="user">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="pass" type="password" class="validate" name="pass">
+                                    <label for="pass">Password</label>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="row">
+                                <div >
+                                    <p class="right-align">
+                                        <button
+                                            class="btn btn-large waves-effect waves-light"
+                                            type="button"
+                                            name="action"
+                                            onclick="submitForm()"
+                                        >
+                                            Login
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </article>
-        </section>
-
-        <script src="./static/js/Segundo.js"></script>
-        <script src="./static/js/Tercero.js"></script>
-        <script src="./static/js/Cuarto.js"></script>
-
+            </div>
+        </div>
+        <script type="text/javascript" src="./static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="./static/js/materialize.min.js"></script>
     </body>
-
 </html>

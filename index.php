@@ -18,8 +18,8 @@
         die("La conexion falló: " . $conexion->connect_error);
     }
 
-    $username = @$_POST['usuario'];
-    $password = @$_POST['clave'];
+    $username = @$_POST['user'];
+    $password = @$_POST['pass'];
     
     $sql = "SELECT * FROM $tbl_name WHERE useEmail = '$username'";
 
