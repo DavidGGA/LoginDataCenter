@@ -23,7 +23,7 @@
             </div>
             <div class="titular">
                 <div>
-                    <a class="button" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
+                    <a class="button" href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
                 </div>
             </div>
         </header>
@@ -49,8 +49,7 @@
                                         <form action="DashBoard/{{ clientName }}/{{ product }}/index.php" method="POST">
                                             <input type="hidden" name="username" value="{{ username }}" />
                                             <input type="hidden" name="expires" value="{{ expires }}" />
-                                            <input type="hidden" name="clientName" value="{{ clientName }}" />
-                                            <input type="hidden" name="product" value="{{ product }}" />
+                                            <input type="hidden" name="dataClients" value="{{ dataClients }}" />
                                             <a class="productName" onclick="this.parentNode.submit()">
                                                 <figure class="imagen">
                                                     <img class="imglink" src="./static/img/{{ product }}.png">

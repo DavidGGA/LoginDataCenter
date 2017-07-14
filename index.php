@@ -30,14 +30,28 @@
     if($now < @$_POST['expires']) {
         $username = @$_POST['username'];
         $expires = @$_POST['expires'];
-        $client = @$_POST['client'];
-        $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$client'";
-        $product = $conexion->query($sql3);
+        $dataClients = array();
+        $sql2 = "SELECT usecli.cliID FROM user INNER JOIN usecli ON user.useEmail = usecli.useID WHERE usecli.useID = '$username'";
+        $clients = $conexion->query($sql2);
+        if($clients->num_rows) {
+            while($client = $clients->fetch_array()) {
+                $id = $client['cliID'];
+                $sql3 = "SELECT client.cliName, product.proName FROM client INNER JOIN product  ON client.cliID = product.fk_cliPID WHERE client.cliID  = '$id'";
+                $products = $conexion->query($sql3);
+                if($products->num_rows) {
+                    //var_dump($products);
+                    while ($product = $products->fetch_array()) {
+                        $productName = $product['proName'];
+                        $clientName = $product['cliName'];
+                        $dataClients[$clientName][] = $productName;
+                    }
+                }
+            }
+        }
         echo($twig->render(
             'product.html',
             array(
-                'client' => $client,
-                'products' => $product,
+                'dataClients' => $dataClients,
                 'expires' => $expires,
                 'username' => $username
             )
@@ -51,7 +65,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
                 $_SESSION['start'] = time();
-                $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+                $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
                 
                 $sql2 = "SELECT usecli.cliID FROM user INNER JOIN usecli ON user.useEmail = usecli.useID WHERE usecli.useID = '$username'";
                 $clients = $conexion->query($sql2);

@@ -1,8 +1,6 @@
 <?php
     $username = @$_POST['username'];
     $expires = @$_POST['expires'];
-    $client = @$_POST['client'];
-    $product = @$_POST['product'];
     session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $now = time();
@@ -27,8 +25,6 @@
                             <form action="../../../index.php" method="POST">
                                 <input type="hidden" name="username" value="'.$username.'" />
                                 <input type="hidden" name="expires" value="'.$expires.'" />
-                                <input type="hidden" name="client" value="'.$client.'" />
-                                <input type="hidden" name="product" value="'.$product.'" />
                                 <input id="boton" class="button" type="submit" value="Return to products">
                             </form>
                                 <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=75e75537-e3aa-40d5-b3e0-6f2cf75cbd63" style="border:0px" width="1100px" height="800px"></iframe>
