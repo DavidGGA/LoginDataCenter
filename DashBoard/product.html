@@ -32,8 +32,6 @@
                 <li><a href="#">Welcome user {{ username }}</a></li>
             </ul>
         </nav>
-<h5 style="margin-left: 20px;"class="titulo">Products for {{ username }}</h5>
-        </nav>
         <section class="posts">
 
     <div class="row">
@@ -41,7 +39,7 @@
                 <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
                     <h5>{{ clientName }}</h5>
                     {% for product in Products %}
-                        <h5>{{ product}}</h5>
+                        
                         <li>
                             <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product }}</div>
                             <div class="collapsible-body">
@@ -55,12 +53,13 @@
                                             <input type="hidden" name="product" value="{{ product }}" />
                                             <a class="productName" onclick="this.parentNode.submit()">
                                                 <figure class="imagen">
-                                                    <img src="./static/img/{{ product }}.png">
+                                                    <img class="imglink" src="./static/img/{{ product }}.png">
                                                 </figure>
-                                                <div class="detalles">
+                                                 <!--<div class="detalles">
                                                 <br><br>
-                                                    <h5 class="">{{ product }}</h5>
+                                                   <h5 class="">{{ product }}</h5
                                                 </div>
+                                                >-->
                                             </a>
                                         </form>
                                     </div>

@@ -10,7 +10,8 @@
     }
 
 a {
-    color: #0d47a1
+    color: #0d47a1;
+    cursor: pointer;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
     cursor:pointer;
     color: white;
     float: right;
-    font-style: italic;
+    
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -88,7 +89,9 @@ header .titular .publicar {
     text-shadow: 1px 1px 0 #000;
 }
 
-
+img .imglink{
+    cursor: pointer;
+}
 nav {
     background: #22bce0;
     border-left: 15px solid #fff;
