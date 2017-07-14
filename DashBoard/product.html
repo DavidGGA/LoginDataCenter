@@ -10,11 +10,11 @@
         <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
         <link rel="stylesheet" media="all" href="./static/css/products.css" />
         <link rel="stylesheet" href="./static/css/normalize.css" />
-        <link rel="stylesheet" href="./static/css/puls4.css" />
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="./static/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./static/fonts/icomoon.ttf">
+        <link rel="stylesheet" href="./static/css/product.css" />
     </head>
     <body>
         <header>
@@ -23,11 +23,15 @@
             </div>
             <div class="titular">
                 <div>
-                    <a class="publicar" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
+                    <a class="button" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
                 </div>
             </div>
         </header>
         <nav>
+            <ul class="menu">
+                <li><a href="#">Welcome user {{ username }}</a></li>
+            </ul>
+        </nav>
 <h5 style="margin-left: 20px;"class="titulo">Products for {{ username }}</h5>
         </nav>
         <section class="posts">
@@ -55,12 +59,7 @@
                                                 </figure>
                                                 <div class="detalles">
                                                 <br><br>
-                                                    <h5 class="">{{ product }}
-                                                    </h5>
-                                                    <!--
-                                                    <a class="tag">CS3</a>
-                                                    <p class="fecha">Hace <strong>20min</strong></p>
-                                                    -->
+                                                    <h5 class="">{{ product }}</h5>
                                                 </div>
                                             </a>
                                         </form>
@@ -74,7 +73,6 @@
             {% endfor %}
         </div>
         </section>
-        
         <!-- Compiled and minified JavaScript -->
         <script src="./static/js/materialize.js"></script>
         <script>
