@@ -46,6 +46,7 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_array(MYSQLI_ASSOC);
             if ($password == $row['usePassword']) {
+                $dataClients = array();
 
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
@@ -54,33 +55,28 @@
                 
                 $sql2 = "SELECT usecli.cliID FROM user INNER JOIN usecli ON user.useEmail = usecli.useID WHERE usecli.useID = '$username'";
                 $clients = $conexion->query($sql2);
-                if($clients->num_rows)
-                {
-                    while($client = $clients->fetch_array()) 
-                    {
+                if($clients->num_rows) {
+                    while($client = $clients->fetch_array()) {
                         $id = $client['cliID'];
                         $sql3 = "SELECT client.cliName, product.proName FROM client INNER JOIN product  ON client.cliID = product.fk_cliPID WHERE client.cliID  = '$id'";
                         $products = $conexion->query($sql3);
-                        if($products->num_rows)
-                        {
+                        if($products->num_rows) {
                             //var_dump($products);
-                            while ($product = $products->fetch_array())
-                            {
-                                $nombreP = $product['proName'];
-                                $nombreC = $product['cliName'];
-                                echo' '.$nombreC.'<br>'.$nombreP.'<br>';
+                            while ($product = $products->fetch_array()) {
+                                $productName = $product['proName'];
+                                $clientName = $product['cliName'];
+                                $dataClients[$clientName][] = $productName;
                             }
                         }
                     }
-
-
                 }
+
+                print_r($dataClients);
 
                 echo($twig->render(
                     'product.html',
                     array(
-                        'client' => $nombreC,
-                        'products' => $products,
+                        'dataClients' => $dataClients,
                         'expires' => time() + (5 * 60),
                         'username' => $username
                     )
