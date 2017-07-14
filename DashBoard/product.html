@@ -33,8 +33,9 @@
         <section class="posts">
 
     <div class="row">
+            {% for product in products %}
+            <h5>{{ product.cliName}}    </h5>
             <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
-                {% for product in products %}
                     <li>
                         <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product.proName }}</div>
                         <div class="collapsible-body">

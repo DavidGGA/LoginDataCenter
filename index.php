@@ -52,21 +52,35 @@
                 $_SESSION['start'] = time();
                 $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
                 
-                $sql2 = "SELECT user.useEmail, client.cliName FROM user INNER JOIN client ON user.fk_cliID = client.cliID WHERE user.useEmail = '$username'";
-                $client = $conexion->query($sql2);
-                if ($client->num_rows > 0) {
-                    $row = $client->fetch_array(MYSQLI_ASSOC);
-                    $clientName = $row['cliName'];
-                }
+                $sql2 = "SELECT usecli.cliID FROM user INNER JOIN usecli ON user.useEmail = usecli.useID WHERE usecli.useID = '$username'";
+                $clients = $conexion->query($sql2);
+                if($clients->num_rows)
+                {
+                    while($client = $clients->fetch_array()) 
+                    {
+                        $id = $client['cliID'];
+                        $sql3 = "SELECT client.cliName, product.proName FROM client INNER JOIN product  ON client.cliID = product.fk_cliPID WHERE client.cliID  = '$id'";
+                        $products = $conexion->query($sql3);
+                        if($products->num_rows)
+                        {
+                            //var_dump($products);
+                            while ($product = $products->fetch_array())
+                            {
+                                $nombreP = $product['proName'];
+                                $nombreC = $product['cliName'];
+                                echo' '.$nombreC.'<br>'.$nombreP.'<br>';
+                            }
+                        }
+                    }
 
-                $sql3 = "SELECT product.proName FROM product INNER JOIN client ON product.fk_cliPID = client.cliID WHERE client.cliName = '$clientName'";
-                $product = $conexion->query($sql3);
+
+                }
 
                 echo($twig->render(
                     'product.html',
                     array(
-                        'client' => $clientName,
-                        'products' => $product,
+                        'client' => $nombreC,
+                        'products' => $products,
                         'expires' => time() + (5 * 60),
                         'username' => $username
                     )
