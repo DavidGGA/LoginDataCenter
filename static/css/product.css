@@ -10,7 +10,7 @@
     }
 
 a {
-    color: #dd4f24
+    color: #0d47a1
 }
 
 body {
@@ -20,7 +20,32 @@ body {
     font-size: 16px
 }
 
+.button {
+    background-color: #008CBA;
+    border: none;
+    cursor:pointer;
+    color: white;
+    float: right;
+    font-style: italic;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 
+    margin: -5px 3px 0 0;
+    padding: .1em .5em;
+    /*text-align: right;
+    
+    text-shadow: 1px 1px 0 #000;*/
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
 }
 h4 {
     margin-left: 20px;
@@ -42,21 +67,13 @@ header .logo {
 }
 
 header .logo img {
-    border-radius: 10%;
-    height: 112.5px;
+    border-radius: 20%;
+    height: 80px;
     width: auto;
 }
 
 header .titular {
     margin: 30px 65px 0 70px;
-}
-
-header .titular .filtro {
-    color: #22bce0;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: none
 }
 
 header .titular .publicar {
@@ -71,54 +88,6 @@ header .titular .publicar {
     text-shadow: 1px 1px 0 #000;
 }
 
-
-header .titular .titulo {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0
-}
-
-header .usuario {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-header .usuario .avatar {
-    margin: 0 1.1em 0 0;
-    position: relative;
-    z-index: 69;
-}
-
-header .usuario .avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%
-}
-
-header .usuario .flechita {
-    background: #dd4f24;
-    color: #fff;
-    display: block;
-    padding: 2px;
-    position: absolute;
-    right: 0;
-    text-align: right;
-    text-decoration: none;
-    top: 15px;
-    width: 60%;
-    z-index: 0;
-}
-
-header .usuario .flechita:after {
-    color: #fff;
-    display: inline-block;
-    font-family: icomoon;
-    margin: 0 0 0 .5em;
-    content: "\ea36";
-    text-shadow: 2px 2px 0 #000
-}
 
 nav {
     background: #22bce0;
@@ -147,6 +116,7 @@ nav .menu {
 
 nav .menu li {
     display: inline-block;
+    margin-left: 15px;
 }
 
 nav .menu li a {
@@ -157,11 +127,11 @@ nav .menu li a {
     text-decoration: none
 }
 
-.posts {
+.products {
     padding: .5em;
 }
 
-.posts .post {
+.products .product {
     background: #fff;
     color: #7a7a7a;
     border-radius: .5em .5em .5em .5em;
@@ -169,17 +139,17 @@ nav .menu li a {
     margin-bottom: 1em;
 }
 
-.posts .post .acciones {
+.products .product .acciones {
     border-top: 3px solid #22bce0;
     padding: .5em;
     overflow: hidden;
 }
 
-.posts .post .acciones .datos {
+.products .product .acciones .datos {
     float: right;
 }
 
-.posts .post .acciones .datos .comentarios {
+.products .product .acciones .datos .comentarios {
     background: #444;
     border-radius: 3px;
     color: #fff;
@@ -188,62 +158,62 @@ nav .menu li a {
     text-decoration: none
 }
 
-.posts .post .acciones .datos .estrellita {
+.products .product .acciones .datos .estrellita {
     text-decoration: none;
 }
 
-.posts .post .acciones .datos .estrellita:before {
+.products .product .acciones .datos .estrellita:before {
     font-family: icomoon;
     color: #fcb92d;
     content: "\e9d9"
 }
 
-.posts .post .acciones .votos {
+.products .product .acciones .votos {
     float: left;
 }
 
-.posts .post .acciones .votos .up,
-.posts .post .acciones .votos .down {
+.products .product .acciones .votos .up,
+.products .product .acciones .votos .down {
     text-decoration: none
 }
 
-.posts .post .acciones .votos .down {
+.products .product .acciones .votos .down {
     color: #f00;
 }
 
-.posts .post .acciones .votos .down:before {
+.products .product .acciones .votos .down:before {
     font-family: icomoon;
     content: "\ea36"
 }
 
-.posts .post .acciones .votos .up {
+.products .product .acciones .votos .up {
     color: #008000;
 }
 
-.posts .post .acciones .votos .up:before {
+.products .product .acciones .votos .up:before {
     font-family: icomoon;
     content: "\ea32"
 }
 
-.posts .post .descripcion {
+.products .product .descripcion {
     color: #7a7a7a;
 }
 
-.posts .post .descripcion .detalles {
+.products .product .descripcion .detalles {
     height: 160px;
     margin-left: 130px;
 }
 
-.posts .post .descripcion .detalles .autor {
+.products .product .descripcion .detalles .autor {
     margin: .3em 0 1em 0
 }
 
-.posts .post .descripcion .detalles .fecha {
+.products .product .descripcion .detalles .fecha {
     float: right;
     margin: 0 1em 0 0
 }
 
-.posts .post .descripcion .detalles .tag {
+.products .product .descripcion .detalles .tag {
     background: #22bce0;
     border-radius: .5em;
     color: #fff;
@@ -251,7 +221,7 @@ nav .menu li a {
     text-decoration: none
 }
 
-.posts .post .descripcion .detalles .titulo {
+.products .product .descripcion .detalles .titulo {
     color: #444;
     font-size: 18px;
     font-style: italic;
@@ -259,12 +229,12 @@ nav .menu li a {
     padding: .5em .5em 0 0
 }
 
-.posts .post .descripcion .imagen {
+.products .product .descripcion .imagen {
     margin: 0;
     float: left;
 }
 
-.posts .post .descripcion .imagen img {
+.products .product .descripcion .imagen img {
     height: 160px;
     vertical-align: top;
     width: 120px;
@@ -282,12 +252,12 @@ nav .menu li a {
         position: absolute;
         top: -10px
     }
-    .posts .post {
+    .products .product {
         display: inline-block;
         width: 46%;
         vertical-align: top;
     }
-    .posts .post:nth-child(odd) {
+    .products .product:nth-child(odd) {
         margin-right: 2%
     }
 }

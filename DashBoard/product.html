@@ -10,11 +10,11 @@
         <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
         <link rel="stylesheet" media="all" href="./static/css/products.css" />
         <link rel="stylesheet" href="./static/css/normalize.css" />
-        <link rel="stylesheet" href="./static/css/puls4.css" />
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="./static/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./static/fonts/icomoon.ttf">
+        <link rel="stylesheet" href="./static/css/product.css" />
     </head>
     <body>
         <header>
@@ -23,53 +23,54 @@
             </div>
             <div class="titular">
                 <div>
-                    <a class="publicar" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
+                    <a class="button" href=./logout.php><i class="material-icons">settings_power</i>Cerrar Sesion</a>
                 </div>
             </div>
         </header>
         <nav>
-<h5 style="margin-left: 20px;"class="titulo">Products for {{ client }} user {{ username }}</h5>
-        </nav>
-        <section class="posts">
-
-    <div class="row">
-            {% for product in products %}
-            <h5>{{ product.cliName}}    </h5>
-            <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product.proName }}</div>
-                        <div class="collapsible-body">
-                            <center>
-                            <article class="post">
-                                <div class="descripcion">
-                                    <form action="DashBoard/{{ client }}/{{ product.proName }}/index.php" method="POST">
-                                        <input type="hidden" name="username" value="{{ username }}" />
-                                        <input type="hidden" name="expires" value="{{ expires }}" />
-                                        <input type="hidden" name="client" value="{{ client }}" />
-                                        <input type="hidden" name="product" value="{{ product.proName }}" />
-                                        <a class="productName" onclick="this.parentNode.submit()">
-                                            <figure class="imagen">
-                                                <img src="./static/img/{{ product.proName }}.png">
-                                            </figure>
-                                            <div class="detalles">
-                                            <br><br>
-                                                <h5 class="">{{ product.proName }}
-                                                </h5>
-                                                <!--
-                                                <a class="tag">CS3</a>
-                                                <p class="fecha">Hace <strong>20min</strong></p>
-                                                -->
-                                            </div>
-                                        </a>
-                                    </form>
-                                </div>
-                            </article>
-                            </center>
-                        </div>
-                    </li>
-                {% endfor %}
+            <ul class="menu">
+                <li><a href="#">Welcome user {{ username }}</a></li>
             </ul>
-        </div>
+        </nav>
+        <section class="products">
+            <div class="row">
+                {% for product in products %}
+                    <h5>{{ product.cliName}}    </h5>
+                    <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product.proName }}</div>
+                            <div class="collapsible-body">
+                                <center>
+                                <article class="product">
+                                    <div class="descripcion">
+                                        <form action="DashBoard/{{ client }}/{{ product.proName }}/index.php" method="POST">
+                                            <input type="hidden" name="username" value="{{ username }}" />
+                                            <input type="hidden" name="expires" value="{{ expires }}" />
+                                            <input type="hidden" name="client" value="{{ client }}" />
+                                            <input type="hidden" name="product" value="{{ product.proName }}" />
+                                            <a class="productName" onclick="this.parentNode.submit()">
+                                                <figure class="imagen">
+                                                    <img src="./static/img/{{ product.proName }}.png">
+                                                </figure>
+                                                <div class="detalles">
+                                                    <br><br>
+                                                    <h5 class="">{{ product.proName }}
+                                                    </h5>
+                                                    <!--
+                                                    <a class="tag">CS3</a>
+                                                    <p class="fecha">Hace <strong>20min</strong></p>
+                                                    -->
+                                                </div>
+                                            </a>
+                                        </form>
+                                    </div>
+                                </article>
+                                </center>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </section>
         
         <!-- Compiled and minified JavaScript -->
