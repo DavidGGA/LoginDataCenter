@@ -28,47 +28,50 @@
             </div>
         </header>
         <nav>
-<h5 style="margin-left: 20px;"class="titulo">Products for {{ client }} user {{ username }}</h5>
+<h5 style="margin-left: 20px;"class="titulo">Products for {{ username }}</h5>
         </nav>
         <section class="posts">
 
     <div class="row">
-            {% for product in products %}
-            <h5>{{ product.cliName}}    </h5>
-            <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product.proName }}</div>
-                        <div class="collapsible-body">
-                            <center>
-                            <article class="post">
-                                <div class="descripcion">
-                                    <form action="DashBoard/{{ client }}/{{ product.proName }}/index.php" method="POST">
-                                        <input type="hidden" name="username" value="{{ username }}" />
-                                        <input type="hidden" name="expires" value="{{ expires }}" />
-                                        <input type="hidden" name="client" value="{{ client }}" />
-                                        <input type="hidden" name="product" value="{{ product.proName }}" />
-                                        <a class="productName" onclick="this.parentNode.submit()">
-                                            <figure class="imagen">
-                                                <img src="./static/img/{{ product.proName }}.png">
-                                            </figure>
-                                            <div class="detalles">
-                                            <br><br>
-                                                <h5 class="">{{ product.proName }}
-                                                </h5>
-                                                <!--
-                                                <a class="tag">CS3</a>
-                                                <p class="fecha">Hace <strong>20min</strong></p>
-                                                -->
-                                            </div>
-                                        </a>
-                                    </form>
-                                </div>
-                            </article>
-                            </center>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+            {% for clientName, Products in dataClients %}
+                <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
+                    <h5>{{ clientName }}</h5>
+                    {% for product in Products %}
+                        <h5>{{ product}}</h5>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product }}</div>
+                            <div class="collapsible-body">
+                                <center>
+                                <article class="post">
+                                    <div class="descripcion">
+                                        <form action="DashBoard/{{ client }}/{{ product }}/index.php" method="POST">
+                                            <input type="hidden" name="username" value="{{ username }}" />
+                                            <input type="hidden" name="expires" value="{{ expires }}" />
+                                            <input type="hidden" name="client" value="{{ client }}" />
+                                            <input type="hidden" name="product" value="{{ product }}" />
+                                            <a class="productName" onclick="this.parentNode.submit()">
+                                                <figure class="imagen">
+                                                    <img src="./static/img/{{ product }}.png">
+                                                </figure>
+                                                <div class="detalles">
+                                                <br><br>
+                                                    <h5 class="">{{ product }}
+                                                    </h5>
+                                                    <!--
+                                                    <a class="tag">CS3</a>
+                                                    <p class="fecha">Hace <strong>20min</strong></p>
+                                                    -->
+                                                </div>
+                                            </a>
+                                        </form>
+                                    </div>
+                                </article>
+                                </center>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+            {% endfor %}
         </div>
         </section>
         
