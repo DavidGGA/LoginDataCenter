@@ -71,8 +71,6 @@
                     }
                 }
 
-                print_r($dataClients);
-
                 echo($twig->render(
                     'product.html',
                     array(

@@ -48,10 +48,10 @@
                                 <center>
                                 <article class="post">
                                     <div class="descripcion">
-                                        <form action="DashBoard/{{ client }}/{{ product }}/index.php" method="POST">
+                                        <form action="DashBoard/{{ clientName }}/{{ product }}/index.php" method="POST">
                                             <input type="hidden" name="username" value="{{ username }}" />
                                             <input type="hidden" name="expires" value="{{ expires }}" />
-                                            <input type="hidden" name="client" value="{{ client }}" />
+                                            <input type="hidden" name="clientName" value="{{ clientName }}" />
                                             <input type="hidden" name="product" value="{{ product }}" />
                                             <a class="productName" onclick="this.parentNode.submit()">
                                                 <figure class="imagen">
