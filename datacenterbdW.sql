@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `datacenterbd` /*!40100 DEFAULT CHARACTER SET lat
 USE `datacenterbd`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: datacenterbd
+-- Host: 159.203.134.123    Database: datacenterbd
 -- ------------------------------------------------------
--- Server version 5.5.5-10.1.24-MariaDB
+-- Server version	5.6.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -66,7 +66,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Ecommerce','1'),(2,'Apps','1'),(3,'ReporteGeneral','2'),(4,'TigoLeads','1'),(5,'TigoPortabilidad','1');
+INSERT INTO `product` VALUES (1,'Ecommerce','1'),(2,'Apps','1'),(3,'ReporteGeneral','2'),(4,'Grand','3'),(5,'JamaicaGrande','3'),(6,'MoonPalace','3');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,7 @@ CREATE TABLE `usecli` (
 
 LOCK TABLES `usecli` WRITE;
 /*!40000 ALTER TABLE `usecli` DISABLE KEYS */;
-INSERT INTO `usecli` VALUES (1,'daniel.valencia@ariadnacg.com','1'),(2,'daniel.valencia@ariadnacg.com','2'),(3,'david.gallego@ariadnacg.com','1'),(4,'david.gallego@ariadnacg.com','2'),(5,'dfnarvaez@wingo.com','2'),(6,'Dortega@wingo.com','2'),(7,'MChaves@wingo.com','2'),(8,'daniel.ramirez@maianetworks.com','1'),(9,'daniel.ramirez@maianetworks.com','2'),(10,'juan.espinosa@ariadnacg.com','1'),(11,'juan.espinosa@ariadnacg.com','2'),(12,'tigo@tigo.com','1'),(14,'wingo@wingo.com','2');
+INSERT INTO `usecli` VALUES (1,'daniel.valencia@ariadnacg.com','1'),(2,'daniel.valencia@ariadnacg.com','2'),(3,'david.gallego@ariadnacg.com','1'),(4,'david.gallego@ariadnacg.com','2'),(5,'dfnarvaez@wingo.com','2'),(6,'Dortega@wingo.com','2'),(7,'MChaves@wingo.com','2'),(8,'daniel.ramirez@ariadnacg.com','1'),(9,'daniel.ramirez@ariadnacg.com','2'),(10,'juan.espinosa@ariadnacg.com','1'),(11,'juan.espinosa@ariadnacg.com','2'),(12,'tigo@tigo.com','1'),(13,'sebastian.maldonado@ariadnacg.com','1'),(14,'wingo@wingo.com','2'),(15,'sebastian.maldonado@ariadnacg.com','2'),(16,'ana.ramirez@millicom.com','1'),(17,'angelica.ruiz@tigo.net.py','1'),(18,'cnieves@sv.tigo.com','1'),(19,'cristian.rivera@ariadnacg.com','1'),(20,'cristian.rivera@ariadnacg.com','2'),(21,'felipe.ortiz@ariadnacg.com','1'),(22,'gvega@sv.tigo.com','1'),(23,'marcela.lara@ariadnacg.com','2'),(24,'mariacristina.benitez@tigo.net.py','1'),(25,'max.gomez@ariadnacg.com','1'),(26,'max.gomez@ariadnacg.com','2'),(27,'mmelara@tigo.com.hn','1'),(28,'terrazass@tigo.net.bo','1'),(29,'vasquezn@tigo.net.bo','1'),(30,'reports@maiadatacenter.co','1'),(31,'reports@maiadatacenter.co','2'),(32,'vanessa.saldarriaga@ariadnacg.com','1'),(33,'vanessa.saldarriaga@ariadnacg.com','2'),(34,'david.gallego@ariadnacg.com','3'),(35,'daniel.ramirez@ariadnacg.com','3'),(36,'juan.espinosa@ariadnacg.com','3'),(37,'daniel.valencia@ariadnacg.com','3');
 /*!40000 ALTER TABLE `usecli` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('ana.ramirez@millicom.com','anarmz/2017',1,1,'1'),('angelica.ruiz@tigo.net.py','anruiz%py',1,1,'1'),('cnieves@sv.tigo.com','nievesSV%2017',1,1,'1'),('cristian.rivera@ariadnacg.com','crisRiv#2017',1,1,'1'),('daniel.ramirez@maianetworks.com','daramirez2017#',1,1,'2'),('daniel.valencia@ariadnacg.com','dvalencia#2017',1,1,'1'),('david.gallego@ariadnacg.com','davidAriadna2017&',1,1,'2'),('dfnarvaez@wingo.com','dfwingo#2017',1,1,'2'),('Dortega@wingo.com','dortega2017*',1,1,'2'),('felipe.ortiz@ariadnacg.com','fortiz$#17',1,1,'1'),('gvega@sv.tigo.com','vegatigo&2017',1,1,'1'),('juan.espinosa@ariadnacg.com','juanAriadna#',1,1,'2'),('marcela.lara@ariadnacg.com','malara/tigo',1,1,'2'),('mariacristina.benitez@tigo.net.py','crisbtz#net',1,1,'1'),('max.gomez@ariadnacg.com','max$2017All',1,1,'1'),('MChaves@wingo.com','wingoChaves2017$',1,1,'2'),('mmelara@tigo.com.hn','laratigohn$',1,1,'1'),('terrazass@tigo.net.bo','terrazass%bo',1,1,'1'),('tigo@tigo.com','tigoDash',1,1,'1'),('vasquezn@tigo.net.bo','vasquezn$bo',1,1,'1'),('wingo@wingo.com','wingoDash',1,1,'2');
+INSERT INTO `user` VALUES ('ana.ramirez@millicom.com','anarmz/2017',1,1,'1'),('angelica.ruiz@tigo.net.py','anruiz%py',1,1,'1'),('cnieves@sv.tigo.com','nievesSV%2017',1,1,'1'),('cristian.rivera@ariadnacg.com','crisRiv#2017',1,1,'1'),('daniel.ramirez@ariadnacg.com','daramirez2017#',1,1,'1'),('daniel.valencia@ariadnacg.com','dvalencia#2017',1,1,'1'),('david.gallego@ariadnacg.com','davidAriadna2017&',1,1,'2'),('dfnarvaez@wingo.com','dfwingo#2017',1,1,'2'),('Dortega@wingo.com','dortega2017*',1,1,'2'),('felipe.ortiz@ariadnacg.com','fortiz$#17',1,1,'1'),('gvega@sv.tigo.com','vegatigo&2017',1,1,'1'),('juan.espinosa@ariadnacg.com','juanAriadna#',1,1,'2'),('marcela.lara@ariadnacg.com','malara/tigo',1,1,'2'),('mariacristina.benitez@tigo.net.py','crisbtz#net',1,1,'1'),('max.gomez@ariadnacg.com','max$2017All',1,1,'1'),('MChaves@wingo.com','wingoChaves2017$',1,1,'2'),('mmelara@tigo.com.hn','laratigohn$',1,1,'1'),('reports@maiadatacenter.co','DataReportsMaia',1,1,'2'),('sebastian.maldonado@ariadnacg.com','Sebas2017#',1,1,'1'),('terrazass@tigo.net.bo','terrazass%bo',1,1,'1'),('tigo@tigo.com','tigoDash',1,1,'1'),('vanessa.saldarriaga@ariadnacg.com','vaneAriadna#2017',1,1,'1'),('vasquezn@tigo.net.bo','vasquezn$bo',1,1,'1'),('wingo@wingo.com','wingoDash',1,1,'2');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -138,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-13 19:18:55
+-- Dump completed on 2017-07-17 16:19:44
