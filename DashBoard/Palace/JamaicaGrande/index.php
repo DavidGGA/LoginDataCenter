@@ -37,7 +37,6 @@
                         </script>
                         <!-- End Google Tag Manager -->
                     </head>
-
                     <body class="is-loading">
                         <!-- Google Tag Manager (noscript) -->
                         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK446K5"
@@ -45,12 +44,12 @@
                         <!-- End Google Tag Manager (noscript) -->
                         <!-- Wrapper -->
                             <div id="wrapper">
-                            <form action="../../../index.php" method="POST">
-                                <input type="hidden" name="username" value="'.$username.'" />
-                                <input type="hidden" name="expires" value="'.$expires.'" />
-                                <input class="button" id="boton" type="submit" value="Return to products">
-                            </form>
-                            <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=9bed9241-fe73-497a-8fb6-fa3677c3b6ff" style="border:0px" width="1100px" height="800px"></iframe>
+	                            <form action="../../../index.php" method="POST">
+	                                <input type="hidden" name="username" value="'.$username.'" />
+	                                <input type="hidden" name="expires" value="'.$expires.'" />
+	                                <input id="boton" class="button" type="submit" value="Return to products">
+	                            </form>
+                                <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=fd51254d-3c37-442d-89e0-8a16a9dff334" style="border:0px" width="1100px" height="800px"></iframe>
                             </div>
 
                         <!-- Scripts -->
@@ -66,11 +65,11 @@
                 </html>
             ';
         } else {
-            echo "Su sesion a terminado, <a class='button' href='../../../index.php'> Necesita Hacer Login</a>";
+            echo "Su sesion a terminado, <a href='../../../index.php'> Necesita Hacer Login</a>";
         }
     } else {
         echo "Esta pagina es solo para usuarios registrados";
-        echo "<br><a class='button' href='../../../index.php'>Login</a>";
+        echo "<br><a href='../../../index.php'>Login</a>";
         exit;
     }
 ?>
