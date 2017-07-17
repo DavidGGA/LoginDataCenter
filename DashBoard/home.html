@@ -1,63 +1,84 @@
 <!doctype html>
 <html class="no-js" lang="es-ES">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
-        <link rel="stylesheet" media="all" href="./static/css/Style.css" />
-        <link rel="stylesheet" href="./static/css/estilos.css">
-        <link rel="stylesheet" href="./static/css/materialize.css">
-    </head>
-    <body itemscope>
-        <div id="experience">
-            <div id="canvas-wrap">
-                <canvas id="lines"></canvas>
-                <div class="Contenido2" id="overlay">
-                    <div class="Contenido">
-                        <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
-                        <form action="./index.php" method="POST" id="loginForm">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" name="user">
-                                    <label for="email">Email</label>
-                                </div>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
+    <link rel="stylesheet" media="all" href="./static/css/Style.css" />
+    <link rel="stylesheet" href="./static/css/estilos.css">
+    <link rel="stylesheet" href="./static/css/materialize.css">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TK446K5');
+
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body itemscope>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK446K5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="experience">
+        <div id="canvas-wrap">
+            <canvas id="lines"></canvas>
+            <div class="Contenido2" id="overlay">
+                <div class="Contenido">
+                    <img id="LogoDC" src="./static/img/DataCenterLogo.png" alt="Logo Data Center">
+                    <form action="./index.php" method="POST" id="loginForm">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate" name="user">
+                                <label for="email">Email</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="pass" type="password" class="validate" name="pass">
-                                    <label for="pass">Password</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="pass" type="password" class="validate" name="pass">
+                                <label for="pass">Password</label>
                             </div>
-                            <div class="row">
-                                <div >
-                                    <p class="right-align">
-                                        <button
-                                            class="btn btn-large waves-effect waves-light"
-                                            type="button"
-                                            name="action"
-                                            id="submitButton"
-                                            onclick="submitForm()"
-                                        >
+                        </div>
+                        <div class="row">
+                            <div>
+                                <p class="right-align">
+                                    <button class="btn btn-large waves-effect waves-light" type="button" name="action" id="submitButton" onclick="submitForm()">
                                             Login
                                         </button>
-                                    </p>
-                                </div>
+                                </p>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <script src="./static/js/materialize.js"></script>
-        <script type="text/javascript">
-            function submitForm(){
-                document.getElementById("loginForm").submit();
-            }
-        </script>
-        <script src="./static/js/primero.js"></script>
-        <script src="./static/js/Segundo.js"></script>
-        <script src="./static/js/Tercero.js"></script>
-        <script src="./static/js/Cuarto.js"></script>
-        <script type="text/javascript" src="./static/js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="./static/js/materialize.js"></script>
-    </body>
+    </div>
+    <script src="./static/js/materialize.js"></script>
+    <script type="text/javascript">
+        function submitForm() {
+            document.getElementById("loginForm").submit();
+        }
+
+    </script>
+    <script src="./static/js/primero.js"></script>
+    <script src="./static/js/Segundo.js"></script>
+    <script src="./static/js/Tercero.js"></script>
+    <script src="./static/js/Cuarto.js"></script>
+    <script type="text/javascript" src="./static/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="./static/js/materialize.js"></script>
+</body>
+
 </html>

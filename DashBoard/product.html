@@ -1,81 +1,108 @@
 <!doctype html>
 <html class="no-js" lang="es-ES">
-    <head>
-        <title>
-        Maia DataCenter
-        </title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
-        <link rel="stylesheet" href="./static/css/normalize.css" />
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="./static/css/materialize.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="./static/fonts/icomoon.ttf">
-        <link rel="stylesheet" href="./static/css/product.css" />
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <img src="./static/img/DataCenterLogo.png" alt="DataCenter" />
-            </div>
-            <div class="titular">
-                <div>
-                    <a class="button waves-effect waves-light " href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
-                </div>
-            </div>
-        </header>
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Welcome user {{ username }}</a></li>
-            </ul>
-        </nav>
-        <section class="posts">
 
-    <div class="row">
+<head>
+    <title>
+        Maia DataCenter
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./static/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./static/fonts/icomoon.ttf">
+    <link rel="stylesheet" href="./static/css/product.css" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TK446K5');
+
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK446K5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <div class="logo">
+            <img src="./static/img/DataCenterLogo.png" alt="DataCenter" />
+        </div>
+        <div class="titular">
+            <div>
+                <a class="button waves-effect waves-light " href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Welcome user {{ username }}</a></li>
+        </ul>
+    </nav>
+    <section class="posts">
+
+        <div class="row">
             {% for clientName, Products in dataClients %}
-                <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
-                    <h5>{{ clientName }}</h5>
-                    {% for product in Products %}
-                        
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product }}</div>
-                            <div class="collapsible-body">
-                                <center>
-                                <article class="post">
-                                    <div class="descripcion">
-                                        <form action="DashBoard/{{ clientName }}/{{ product }}/index.php" method="POST">
-                                            <input type="hidden" name="username" value="{{ username }}" />
-                                            <input type="hidden" name="expires" value="{{ expires }}" />
-                                            <input type="hidden" name="dataClients" value="{{ dataClients }}" />
-                                            <a class="productName" onclick="this.parentNode.submit()">
-                                                <figure class="imagen">
-                                                    <img class="imglink" src="./static/img/{{ product }}.png">
-                                                </figure>
-                                                 <!--<div class="detalles">
+            <ul class="collapsible popout col s12 m8 l6 xl10" data-collapsible="accordion">
+                <h5>{{ clientName }}</h5>
+                {% for product in Products %}
+
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">view_quilt</i>{{ product }}</div>
+                    <div class="collapsible-body">
+                        <center>
+                            <article class="post">
+                                <div class="descripcion">
+                                    <form action="DashBoard/{{ clientName }}/{{ product }}/index.php" method="POST">
+                                        <input type="hidden" name="username" value="{{ username }}" />
+                                        <input type="hidden" name="expires" value="{{ expires }}" />
+                                        <input type="hidden" name="dataClients" value="{{ dataClients }}" />
+                                        <a class="productName" onclick="this.parentNode.submit()">
+                                            <figure class="imagen">
+                                                <img class="imglink" src="./static/img/{{ product }}.png">
+                                            </figure>
+                                            <!--<div class="detalles">
                                                 <br><br>
                                                    <h5 class="">{{ product }}</h5
                                                 </div>
                                                 >-->
-                                            </a>
-                                        </form>
-                                    </div>
-                                </article>
-                                </center>
-                            </div>
-                        </li>
-                    {% endfor %}
-                    </ul>
+                                        </a>
+                                    </form>
+                                </div>
+                            </article>
+                        </center>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
             {% endfor %}
         </div>
-        </section>
-        <!-- Compiled and minified JavaScript -->
-        <script type="text/javascript" src="./static/js/jquery-3.2.1.js"></script>
-        <script src="./static/js/materialize.js"></script>
-        <script>
+    </section>
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="./static/js/jquery-3.2.1.js"></script>
+    <script src="./static/js/materialize.js"></script>
+    <script>
         $(document).ready(function() {
-        $('.collapsible').collapsible();
+            $('.collapsible').collapsible();
         });
-        </script>
-    </body>
+
+    </script>
+</body>
+
 </html>
