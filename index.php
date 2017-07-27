@@ -6,9 +6,9 @@
     $loader = new Twig_Loader_Filesystem('DashBoard');
     $twig = new Twig_Environment($loader);
 
-    $host_db = "159.203.134.123";
-    $user_db = "usermaia";
-    $pass_db = "1qa2ws3E.2017*";
+    $host_db = "localhost";
+    $user_db = "root";
+    $pass_db = "";
     $db_name = "datacenterbd";
     $tbl_name = "user";
 
