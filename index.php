@@ -94,6 +94,8 @@
                     )
                 ));
 
+            } else {
+                echo($twig->render('home.html', array()));
             }
         } else {
             echo($twig->render('home.html', array()));
