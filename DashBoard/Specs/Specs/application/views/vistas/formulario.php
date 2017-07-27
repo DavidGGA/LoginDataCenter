@@ -97,7 +97,7 @@
     <br>
     <div>
     	<input type="submit" value="Cargar datos" />////////////////////////
-	    	<a href="http://maiadatacenter.co/specs/controlador2/mostrar_datos/">
+	    	<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/mostrar_datos/">
 		    	<button type="button" value="Volver">
 		    		Volver
 		    	</button>    	

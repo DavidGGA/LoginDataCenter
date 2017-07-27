@@ -3,7 +3,7 @@
 <br><br><br>
 <center>
 	<p>
-		<a href="http://maiadatacenter.co/specs/controlador2/nuevo/" > 
+		<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/nuevo/" > 
 			<button type="button" border="15" />
 	  			<h3>Crear ID</h3>
 			</button>
@@ -41,7 +41,7 @@
 </form>
 <!--///////////////////////////BUSCADOR ANTERIOR FIN///////////////////////////////////////-->	
 	<p>
-		<a href="http://maiadatacenter.co/specs/login/logout/" align="">
+		<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/login/logout/" align="">
   			<div align="right">
   				Cerrar Sesion
 			</div>
