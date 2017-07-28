@@ -239,7 +239,7 @@ class Controlador2 extends CI_Controller
     } */ 
     function mostrar_datos()
 	{
-
+        '<a href="http://maiadatacenter.co/logout.php">Logout</a>';
 		echo "<center><h1>Bienvenido Specs Maia</h1></center>";
 		
 		//$id = $this->input->post('id');

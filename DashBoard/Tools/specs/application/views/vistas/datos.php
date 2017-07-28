@@ -31,6 +31,7 @@
 	</div>	
 </div>
 <!--/////////////////BUSCADOR NUEVO FIN//////////////////-->
+<a href="http://maiadatacenter.co/logout.php">Logout</a>
 <br>
 <br>
 <br>
