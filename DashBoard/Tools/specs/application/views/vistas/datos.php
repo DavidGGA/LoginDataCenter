@@ -41,7 +41,7 @@
 </form>
 <!--///////////////////////////BUSCADOR ANTERIOR FIN///////////////////////////////////////-->	
 	<p>
-		<a href="http://maiadatacenter.co/specs/login/logout/" align="">
+		<a href="http://maiadatacenter.co/logout.php" align="">
   			<div align="right">
   				Cerrar Sesion
 			</div>
