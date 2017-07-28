@@ -209,11 +209,11 @@
             /* End of file index.php */
             /* Location: ./index.php */
         } else {
-            echo "Su sesion a terminado, <a href='/../../../index.php'> Necesita Hacer Login</a>";
+            echo "Su sesion a terminado, <a href='../../../index.php'> Necesita Hacer Login</a>";
         }
     } else {
         echo "Esta pagina es solo para usuarios registrados";
-        echo "<br><a href='/../../../index.php'>Login</a>";
+        echo "<br><a href='../../../index.php'>Login</a>";
         exit;
     }
 ?>

@@ -240,7 +240,7 @@ class Controlador2 extends CI_Controller
     function mostrar_datos()
 	{
 			' <tr>
-			<a href="http://maiadatacenter.co/logout.php">;
+			<a href="../../../../../logout.php">;
   			<div align="right">
   				Cerrar Sesion
 			</div>
