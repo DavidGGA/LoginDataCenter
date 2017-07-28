@@ -239,13 +239,7 @@ class Controlador2 extends CI_Controller
     } */ 
     function mostrar_datos()
 	{
-			' <tr>
-			<a href="../../../../../logout.php">;
-  			<div align="right">
-  				Cerrar Sesion :(
-			</div>
-		</a>
-		</tr>';
+
 		echo "<center><h1>Bienvenido Specs Maia</h1></center>";
 		
 		//$id = $this->input->post('id');
