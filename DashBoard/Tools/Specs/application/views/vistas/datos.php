@@ -3,7 +3,7 @@
 <br><br><br>
 <center>
 	<p>
-		<a href="http://maiadatacenter.co/specs/controlador2/nuevo/" > 
+		<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/nuevo/" > 
 			<button type="button" border="15" />
 	  			<h3>Crear ID</h3>
 			</button>

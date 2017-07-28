@@ -1,6 +1,6 @@
 <center>
 	<p>
-		<a href="http://maiadatacenter.co/specs/controlador2/mostrar_datos/">
+		<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/mostrar_datos/">
 		    	<button type="button" border="15">
 		    		<h3>Volver</h3>
 		    	</button>    	
