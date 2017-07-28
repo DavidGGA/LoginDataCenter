@@ -242,7 +242,7 @@ class Controlador2 extends CI_Controller
 			' <tr>
 			<a href="../../../../../logout.php">;
   			<div align="right">
-  				Cerrar Sesion
+  				Cerrar Sesion :(
 			</div>
 		</a>
 		</tr>';
