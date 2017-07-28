@@ -40,13 +40,7 @@
 	<input type="submit" value = "Buscar" />
 </form>
 <!--///////////////////////////BUSCADOR ANTERIOR FIN///////////////////////////////////////-->	
-	<!--<p>
-		<a href="../../../../../../logout.php" align="">
-  			<div align="right">
-  				Cerrar Sesion
-			</div>
-		</a>
-	</p>	-->
+
 <br>
 <form action="<?php echo site_url('controlador2/exportar/');?>" method ="post" align="center" >
 	<?PHP echo $tabla; ?>
