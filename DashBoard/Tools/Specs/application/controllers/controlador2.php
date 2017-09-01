@@ -18,6 +18,7 @@ class Controlador2 extends CI_Controller
         // Load 'standard' flexi auth library by default.
         //$this->load->library('flexi_auth');
 	}
+
 	function index()
 	{
 		//echo base_url();
@@ -38,11 +39,10 @@ class Controlador2 extends CI_Controller
 		//$this->load->view('vistas/mensajes');
 		//index buscador
 
-		$data['tabla'] = array('titulo' => 'Buscador con múltiples criterios', 
+		$data['tabla'] = array('titulo' => 'Buscador con múltiples criterios de busqueda :D', 
 					  'resultados' => $this->busqueda());
 					  
 		$this->load->view('vistas/datos',$data);
-
 	}
 	//aquí es donde hacemos toda la búsqueda
 
@@ -65,20 +65,21 @@ class Controlador2 extends CI_Controller
  
             //si search es distinto de false significa que hay resultados
             //y los mostramos con un loop foreach
-
-            print_r($search);exit;
-            if($search !== FALSE)
-            {
- 
-                foreach($search as $fila)
+            $array = json_decode(json_encode($search), true);
+            //var_dump($array);
+            $datitos = json_encode($array);
+            //var_dump($datitos);
+            print_r($datitos);exit;
+            if($datitos !== FALSE)
+            {		
+                foreach($datitos as $fila)
                 {
                 ?>
  
-                    <p><a title="<?php echo $fila->users ?>" href="" 
+                    <p><a title="<?php echo $fila->users ?>" id="jum" href="" 
                     	onclick="$('.users').val($(this).attr('title')); ">
                     	<?php echo $fila->users ?>
                     </a></p>
- 
                 <?php
                 }
  
@@ -94,8 +95,8 @@ class Controlador2 extends CI_Controller
             }
  
         }
- 
     }
+
 	function nuevo()
 	{
 		if ($this->mimo_model->obtener()) 
@@ -131,6 +132,7 @@ class Controlador2 extends CI_Controller
 		//$this->db->insert('users', $data);
         //$insert_id = $this->db->insert_id();
 	}
+
 	function editar($id = 0)
 	{
 		if($id != 0){
@@ -144,8 +146,8 @@ class Controlador2 extends CI_Controller
 		} else {
 			redirect('vistas/mensajes');
 		}
-
 	}
+
 	function borrar($id)
 	{
 		//$data ['id'] = $id;
@@ -154,6 +156,7 @@ class Controlador2 extends CI_Controller
 		//$data ['id'] = $this->uri->segment(3);
 		//print 'algo='.$this->mimo_model->obtenerdato($data['id']);
 	}
+
 	function actualizarperfil()
 	{
 		//print_r($_POST);
@@ -177,12 +180,14 @@ class Controlador2 extends CI_Controller
 
 		//$this->load->view('vistas/headers');
 	}
+
 	/*function start()
 	{
 		$this->load->view('vistas/headers');
 		$this->load->view('vistas/start');
 		$this->load->helper('url');
 	}*/
+
 	/*public function indexx()
     {
         $this->load->view('vistas/formulario');
@@ -231,16 +236,18 @@ class Controlador2 extends CI_Controller
         	//$this->load->view('vistas/bienvenido');
    		}		
     }
+
     /*function index_x()
     {
     	$data['titulo'] = 'Actualizar Perfil';
     	$data['users'] = $this->mimo_model->users();
     	$this->load->view('datos_view', $data);
     } */ 
+
     function mostrar_datos()
 	{
-        '<a href="http://maiadatacenter.co/logout.php">Logout</a>';
-		echo "<center><h1>Bienvenido Specs Maia</h1></center>";
+       // '<a href="http://maiadatacenter.co/logout.php">Logout</a>';
+		echo "<h2>Bienvenido Specs Maia</h2>";
 		
 		//$id = $this->input->post('id');
 		//die($id);
@@ -249,20 +256,21 @@ class Controlador2 extends CI_Controller
 
         $data['tabla'] = '';
 
-        $data['tabla'] .= '<table id="myTable" name="myTable" style="width:100%" border="6px">';
+        $data['tabla'] .= '<table id="myTable" name="myTable" class="table table-bordered table-hover table-condensed" style="width:100%">';
 
         $data['tabla'] .= '<tr>
-        						<th><h3>Id Specs</h3></th>
-						    	<th><h3>Mercado</h3></th>
-						    	<th><h3>Sitio</h3></th>
-						    	<th><h3>Banner</h3></th>
-						    	<th><h3>Size<br>(width/large)</h3></th> 
-						    	<th><h3>Formato</h3></th> 
-						    	<th><h3>Weight</h3></th>
-						    	<th><h3>ClickTag</h3></th>
-						    	<th><h3>Observaciones</h3></th>
-						    	<th><h3>Acción</h3></th>
-						    	<th><h3>Exporte su Info</h3><input type="checkbox" id="checktodos" /></th>
+        						<!--<th>Id Specs</th>-->
+						    	<th>Mercado</th>
+						    	<th>Sitio</th>
+						    	<th>Banner</th>
+						    	<th>Size<br>(width/large)</th> 
+						    	<th>Formato</th> 
+						    	<th>Weight</th>
+						    	<th>ClickTag</th>
+						    	<th>Observaciones</th>
+						    	<th>Editar</th>
+						    	<th>Eliminar</th>
+						    	<th>Exporte su Info <br><center><input type="checkbox" id="checktodos" /></center></th>
 						  </tr>';
 
 
@@ -273,17 +281,20 @@ class Controlador2 extends CI_Controller
 			    					<a href="'.base_url().'controlador2/borrar/'.$value->id_user.'">Eliminar</a></td>
 		    echo $value->FirstName;*/
 			$data['tabla'] .= ' <tr>
-			    				<td><h4>'.$value->id_user.'</h4></td>
-			    					<td><h4>'.$value->Mercado.'</h4></td>
-			   						<td><h4>'.$value->Sitio.'</h4></td>
-			   						<td><h4>'.$value->Banner.'</h4></td>
-			    					<td><h4>'.$value->Size.'</h4></td>
-			    					<td><h4>'.$value->Formato.'</h4></td>
-			    					<td><h4>'.$value->Weight.'</h4></td>
-			    					<td><h4>'.$value->ClickTag.'</h4></td>
-			    					<td><h4><a href="'.$value->Observaciones.'"><center>Clic aqui</center></a></h4></td>
-			    					<td><h4><center><a href="'.base_url().'controlador2/editar/'.$value->id_user.'">Actualizar</a>///////////////////////////
-			    					<a href="'.base_url().'controlador2/eleccion/'.$value->id_user.'">Eliminar</a></center></h4></td>
+			    					<!--<td><center>'.$value->id_user.'</center></td>-->
+			    					<td><center>'.$value->Mercado.'</center></td>
+			   						<td><center>'.$value->Sitio.'</center></td>
+			   						<td><center>'.$value->Banner.'</center></td>
+			    					<td><center>'.$value->Size.'</center></td>
+			    					<td><center>'.$value->Formato.'</center></td>
+			    					<td><center>'.$value->Weight.'</center></td>
+			    					<td><center>'.$value->ClickTag.'</center></td>
+			    					<td><a href="'.$value->Observaciones.'"><center> <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></center></a></td>
+			    					
+			    					<td><center><a href="'.base_url().'controlador2/editar/'.$value->id_user.'"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></center></td>
+									
+									<td><center><a href="'.base_url().'controlador2/eleccion/'.$value->id_user.'"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></center></td>
+
 			    					<td><center><input type="checkbox" class="hola"  id="checktodos" name="export'.$value->id_user.'" value="'.$value->id_user.'" ></center></td>
 			 					 </tr>';		
 		        } 
@@ -293,6 +304,7 @@ class Controlador2 extends CI_Controller
 		    $data['tabla'] .= ' </table>';
 			$this->load->view('vistas/datos', $data);			
 	}
+
 	function search_keyword()
         {
             //print_r($_POST);
@@ -301,9 +313,7 @@ class Controlador2 extends CI_Controller
             $data['results']    =   $this->mimo_model->search($keyword);
             //print_r($data['results']);
             $this->load->view('vistas/result_view',$data);
-            echo "<h1>Resultado de su busqueda</h1>";
-
-            
+            echo "<h1>Resultado de su búsqueda</h1>";           
         }
 
 	function eleccion($id_user = 0)
@@ -315,9 +325,8 @@ class Controlador2 extends CI_Controller
 		} else{
 			redirect('controlador2/mostrar_datos');
 		}
-
-
 	}
+
 	//Crear vista//
 	/*function search_keyword()
 	{
@@ -325,6 +334,7 @@ class Controlador2 extends CI_Controller
 		$data['results'] = $this->mimo_model->search('$keyword');
 		$this->load->view('vistas/result_view' , $data);
 	}*/
+
 	//Consulta o funcion para extraer archivox//
 	function exportar()
 	{
@@ -441,6 +451,7 @@ class Controlador2 extends CI_Controller
 		$objWriter->save('php://output');
 		redirect('mainp');
 	}
+
 	/*function formlogin()
 	{
 
@@ -459,6 +470,7 @@ class Controlador2 extends CI_Controller
 		/*$this->load->view('/vistas/login');
 
 	}*/
+
 	///////////////////////////////////////////////////
 	///////////////////////LOGIN//////////////////////
 	/////////////////////////////////////////////////
@@ -536,11 +548,6 @@ class Controlador2 extends CI_Controller
         $this->load->view('/vistas/login', $data);
 
 	}
-	
-	
-
-
-
 }
 
 ?>

@@ -16,7 +16,7 @@
 
  	<table style="width:100%" border="6px">	
 		<tr>
-			<th>Id Usuario</th>
+			<!--<th>Id Usuario</th>-->
 			<th>Mercado</th>
 			<th>Sitio</th> 
 			<th>Banner</th>
@@ -34,7 +34,7 @@
 
 foreach($results as $row){ ?>
 	    <tr>
-	        <td><?php echo $row->id_user; ?></td>
+	        <!--<td><?php echo $row->id_user; ?></td>-->
 	        <td><?php echo $row->Mercado; ?></td>
 	        <td><?php echo $row->Sitio; ?></td>
 	        <td><?php echo $row->Banner; ?></td>
@@ -55,7 +55,7 @@ foreach($results as $row){ ?>
 <center>
 
 <br><br><br>	
-	<input type="submit" value="exportar" />
+	<input class="btn btn-primary" type="submit" value="Exportar" />
 </center>	
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
