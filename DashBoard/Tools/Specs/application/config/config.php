@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/LoginDataCenter/DashBoard/Tools/Specs/';
+$config['base_url'] = 'http://maiadatacenter.co/DashBoard/Tools/Specs/';
 /*
 |--------------------------------------------------------------------------
 | Index File
