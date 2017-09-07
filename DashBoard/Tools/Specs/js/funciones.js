@@ -4,7 +4,7 @@ $(document).ready(function() {
         _tr_ = document.createElement('tr'),
         _th_ = document.createElement('th'),
         _td_ = document.createElement('td');
-    _table_.className = "table table-bordered table-hover"; -
+    _table_.className = "table table-bordered table-hover"; 
     _table_.setAttribute("id", "myTable2");
 
     //utilizamos el evento keyup para coger la información
@@ -35,6 +35,24 @@ $(document).ready(function() {
 
                 $(".muestra_users").html(buildHtmlTable2(data));
                 $(".muestra_users").show();
+                    var rows = $('#myTable2 tbody tr'),
+        copyTable = $('#selectsTable tbody');
+
+    rows.click(function() {
+        var row = $(this),
+            cloneRow = row.clone();
+
+        cloneRow.children('td:last-child').html('<input type="submit" value="Eliminar" style="font-size: 12px; width: 100px;" class="delete btn btn-warning">');
+
+        copyTable.append(cloneRow);
+
+        //row.prevAll().hide();
+    });
+
+    copyTable.on('click', '.delete', function(e) {
+        e.preventDefault();
+        $(this).closest('tr').remove();
+    });
 
                 //$(".muestra_users").html(data);
             } else {
