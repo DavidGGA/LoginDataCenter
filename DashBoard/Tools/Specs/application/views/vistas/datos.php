@@ -20,7 +20,7 @@
         <?php echo form_open('buscador',$atributos) ?>
 
         <!--este es nuestro autocompletado-->
-        <input type="text" width="48" autocomplete="off" onpaste="return false" name="users" id="users" class="users" placeholder="Buscador de múltiples criterios" />
+        <input type="text" width="200" autocomplete="off" onpaste="return false" name="users" id="users" class="users form-control" placeholder="Buscador de múltiples criterios" />
 
         <div class="muestra_users">
             <table id="DataTable" class="table table-bordered table-hover table-condensed" border="1">
