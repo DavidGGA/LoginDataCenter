@@ -13,6 +13,7 @@
     Editar SPEC
 </button>
 <!--/////////////////BUSCADOR NUEVO//////////////////-->
+<br>
 <div align="center" class="buscadorON">
     <div>
         <!--<h2>Buscador múltiples criterios</h2>-->
