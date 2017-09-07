@@ -14,6 +14,8 @@
 </button>
 <!--/////////////////BUSCADOR NUEVO//////////////////-->
 <br>
+<br>
+<br>
 <div align="center" class="buscadorON">
     <div>
         <!--<h2>Buscador múltiples criterios</h2>-->
