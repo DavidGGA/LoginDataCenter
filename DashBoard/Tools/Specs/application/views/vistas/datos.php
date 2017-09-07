@@ -6,21 +6,21 @@
 </a>
 <a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/nuevo/">
     <button class="btn btn-success" type="button">
-	  	    Crear ID
+	  	    Crear SPEC
     </button>
 </a>
 <button class="btn btn-info" onclick="mostrarTabla()" type="button">
-    Mostrar
+    Editar SPEC
 </button>
 <!--/////////////////BUSCADOR NUEVO//////////////////-->
-<div align="center">
+<div align="center" class="buscadorON">
     <div>
         <!--<h2>Buscador múltiples criterios</h2>-->
         <?php $atributos = array('class' => 'formulario') ?>
         <?php echo form_open('buscador',$atributos) ?>
 
         <!--este es nuestro autocompletado-->
-        <input type="text" autocomplete="off" onpaste="return false" name="users" id="users" class="users" placeholder="Buscador de múltiples criterios" />
+        <input type="text" width="48" autocomplete="off" onpaste="return false" name="users" id="users" class="users" placeholder="Buscador de múltiples criterios" />
 
         <div class="muestra_users">
             <table id="DataTable" class="table table-bordered table-hover table-condensed" border="1">
@@ -54,6 +54,8 @@
     <br>
     <input type="submit" class="btn btn-primary" value="Exportar" />
 </form>
+
+<div align="center" class="buscadorON">
 <h4>Seleccionados:</h4>
 <table id="selectsTable" class="table table-bordered table-hover">
     <tbody>
@@ -66,13 +68,12 @@
             <th>Weight</th>
             <th>ClickTag</th>
             <th>Observaciones</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-            <th>Eliminar</th>
+            <th class="noExl">Deseleccionar</th>            
         </tr>
     </tbody>
 </table>
 <button class="btn btn-info" id="export2excel">Exportar</button>
+</div>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js'></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -101,17 +102,20 @@
         var x = document.getElementById('myFormu');
         if (x.style.display === 'none') {
             x.style.display = 'block';
+            $(".buscadorON").hide();
         } else {
             x.style.display = 'none';
+             $(".buscadorON").show();
         }
     }
     ////////////////
+var f = new Date();
 $("#export2excel").click(function(){
   $("#selectsTable").table2excel({
     // exclude CSS class
     exclude: ".noExl",
     name: "Specs",
-    filename: "SomeFile" //do not include extension
+    filename: "Specs"+(f.getDate() + "_" + (f.getMonth() +1) + "_" + f.getFullYear()+"_Hora_"+f.getHours()+"_"+f.getMinutes())  //do not include extension
   });
 });
 

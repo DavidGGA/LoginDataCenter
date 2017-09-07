@@ -270,7 +270,7 @@ class Controlador2 extends CI_Controller
 						    	<th>Observaciones</th>
 						    	<th>Editar</th>
 						    	<th>Eliminar</th>
-						    	<th>Exporte su Info <br><center><input type="checkbox" id="checktodos" /></center></th>
+						    	
 						  </tr>';
 
 
@@ -295,7 +295,7 @@ class Controlador2 extends CI_Controller
 									
 									<td><center><a href="'.base_url().'controlador2/eleccion/'.$value->id_user.'"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></center></td>
 
-			    					<td><center><input type="checkbox" class="hola"  id="checktodos" name="export'.$value->id_user.'" value="'.$value->id_user.'" ></center></td>
+			    					
 			 					 </tr>';		
 		        } 
 			 

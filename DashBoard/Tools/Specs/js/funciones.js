@@ -25,9 +25,9 @@ $(document).ready(function() {
                 html = $.parseHTML(url);
 
                 for (var i = 0, l = data.length; i < l; i++) {
-                    data[i]["Editar"] = html;
-                    data[i].Eliminar = "<h3>&quot;Hot&quot; Items <\/h3> <br \/> <ul id=\"items\" \/><\/div>";
-                    data[i].Exportar = "<input type='checkbox' class='checkbox'><label>Seleccioname!</label>";
+                    data[i][""] = "";
+                   // data[i].Eliminar = "<h3>&quot;Hot&quot; Items <\/h3> <br \/> <ul id=\"items\" \/><\/div>";
+                    //data[i].Exportar = "<input type='checkbox' class='checkbox'><label>Seleccioname!</label>";
                     $(".muestra_users").append(html);
                 }
                 //$(".muestra_users").html('');
