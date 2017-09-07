@@ -53,7 +53,7 @@
 <form id="myFormu" action="<?php echo site_url('controlador2/exportar/');?>" method="post" align="center" style="display: none;">
     <?PHP echo $tabla; ?>
     <br>
-    <input type="submit" class="btn btn-primary" value="Exportar" />
+   <!-- <input type="submit" class="btn btn-primary" value="Exportar" />-->
 </form>
 
 <div align="center" class="buscadorON">
