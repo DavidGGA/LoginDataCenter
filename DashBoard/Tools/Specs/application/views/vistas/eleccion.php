@@ -1,7 +1,7 @@
 <?php $this->load->view('vistas/headers') ?>
 
 
-<?php echo "<p>!!Esta seguro que desea eliminar el componente!!</p>"; ?>
+<?php echo "<p>!!Esta seguro que desea eliminar el SPEC!!</p>"; ?>
 <a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/borrar/<?php echo $id_usuario?>"> 
 	<button class="btn btn-success" type="button">
    		Si

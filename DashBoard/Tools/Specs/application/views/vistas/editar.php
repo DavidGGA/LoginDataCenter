@@ -77,7 +77,7 @@
 		<?= form_label('Email:','email') ?>
 		<?= form_input($EmailAddress) ?>-->
 		<br><br>
-		<?= form_submit('','Actualizar perfil', "class='btn btn-warning'") ?>
+		<?= form_submit('','Actualizar Specs', "class='btn btn-warning'") ?>
 		<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/mostrar_datos/">
 		    	<button class="btn btn-info" type="button" value="Volver">
 		    		Volver

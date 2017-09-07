@@ -158,13 +158,13 @@ color: red;
 <br>
 
 <h5>Observaciones</h5>
-<input type="url" name="observaciones" placeholder="http://www.unaurl.com" value="<?php echo set_value('$Observaciones'); ?>" size="50"/>
+<input type="text" name="observaciones" placeholder="http://www.unaurl.com" value="<?php echo set_value('$Observaciones'); ?>" size="50"/>
 <br><br>
 <!--<h5>###</h5>
 <input type="email" name="email" placeholder="Ej: correo@correo.com" value="<?php echo set_value('$EmailAddress'); ?>" size="50"/>-->
 <br>
 <div>
-	<input type="submit" class="btn btn-success" value="Cargar datos" />
+	<input type="submit" class="btn btn-success" value="Guardar SPEC" />
 	<a href="http://maiadatacenter.co/DashBoard/Tools/Specs/controlador2/mostrar_datos/">
 		<button class="btn btn-info" type="button" value="Volver">
 		Volver
