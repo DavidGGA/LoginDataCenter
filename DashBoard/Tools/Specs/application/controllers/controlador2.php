@@ -289,7 +289,7 @@ class Controlador2 extends CI_Controller
 			    					<td><center>'.$value->Formato.'</center></td>
 			    					<td><center>'.$value->Weight.'</center></td>
 			    					<td><center>'.$value->ClickTag.'</center></td>
-			    					<td><a href="'.$value->Observaciones.'"><center> <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></center></a></td>
+			    					<td><a href="'.$value->Observaciones.'"></a></td>
 			    					
 			    					<td><center><a href="'.base_url().'controlador2/editar/'.$value->id_user.'"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></center></td>
 									
