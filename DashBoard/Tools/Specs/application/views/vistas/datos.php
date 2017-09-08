@@ -9,7 +9,7 @@
 	  	    Crear SPEC
     </button>
 </a>
-<button class="btn btn-info" onclick="mostrarTabla()" type="button">
+<button class="btn btn-info" id="btnMostrar" onclick="mostrarTabla()" type="button">
     Editar SPEC
 </button>
 <!--/////////////////BUSCADOR NUEVO//////////////////-->
@@ -106,9 +106,11 @@
         if (x.style.display === 'none') {
             x.style.display = 'block';
             $(".buscadorON").hide();
+             document.getElementById$('btnMostrar').value = "Volver";
         } else {
             x.style.display = 'none';
              $(".buscadorON").show();
+            document.getElementById$('btnMostrar').value = "Editar Specitos";
         }
     }
     ////////////////
