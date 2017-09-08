@@ -26,7 +26,7 @@
         <input type="text" width="200" autocomplete="off" onpaste="return false" name="users" id="users" class="users form-control" placeholder="Buscador de múltiples criterios" />
 
         <div class="muestra_users">
-            <table id="DataTable" class="table table-bordered table-hover table-condensed" border="1">
+            <table id="DataTable" class="success table table-bordered table-hover table-condensed" border="1">
             </table>
 
         </div>
