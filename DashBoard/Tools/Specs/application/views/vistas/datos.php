@@ -106,11 +106,11 @@
         if (x.style.display === 'none') {
             x.style.display = 'block';
             $(".buscadorON").hide();
-             document.getElementById$('btnMostrar').value = "Volver";
+             $("#btnMostrar").html("Volver");
         } else {
             x.style.display = 'none';
              $(".buscadorON").show();
-            document.getElementById$('btnMostrar').value = "Editar Specitos";
+            $("#btnMostrar").html("Editar Specsitos");
         }
     }
     ////////////////
