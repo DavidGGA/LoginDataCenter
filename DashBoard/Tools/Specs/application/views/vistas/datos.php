@@ -60,9 +60,9 @@
 
 <div align="center" class="buscadorON">
 <h4>Seleccionados:</h4>
-<table id="selectsTable" class="table table-bordered table-hover">
+<table id="selectsTable" class="table table-bordered table-condensed table-striped">
     <tbody>
-        <tr>
+        <tr class="success">
             <th>Mercado</th>
             <th>Sitio</th>
             <th>Banner</th>
@@ -110,7 +110,7 @@
         } else {
             x.style.display = 'none';
              $(".buscadorON").show();
-            $("#btnMostrar").html("Editar Specsitos");
+            $("#btnMostrar").html("Editar Specs");
         }
     }
     ////////////////
