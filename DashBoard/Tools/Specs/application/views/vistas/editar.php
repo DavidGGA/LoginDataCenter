@@ -33,12 +33,12 @@
 		);
 	$ClickTag = array(
 			'name' => 'ClickTag',
-			'placeholder' => 'EJ: 10MB, 1GB, 40KB...',
+			'placeholder' => 'EJ: 100MB, 1GB, 40KB...',
 			'value' => $actu[0]->ClickTag,
 		);	
 	$Observaciones = array(
 			'name' => 'Observaciones',
-			'type' => 'url',
+			'type' => 'text',
 			//'placeholder' => 'EJ: 1,2,3 etc.',
 			'value' => $actu[0]->Observaciones,
 		);				
