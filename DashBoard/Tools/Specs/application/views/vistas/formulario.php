@@ -145,6 +145,7 @@ color: red;
 <br>
 
 <h5>ClickTag</h5>
+<!--
 <select name="clicktag">
 	<option>Seleccionar</option>
 	<option value="Tag">Tag A</option>
@@ -152,9 +153,9 @@ color: red;
 	<option value="Tag">Tag C</option>
 	<option value="Tag">Tag D</option>
 </select>
-<!--
-<input type="text" name="clicktag" placeholder="" value="<?php echo set_value('$ClickTag'); ?>" size="50"/>
 -->
+<input type="text" name="clicktag" placeholder="Tag" value="<?php echo set_value('$ClickTag'); ?>" size="50"/>
+
 <br>
 
 <h5>Observaciones</h5>
