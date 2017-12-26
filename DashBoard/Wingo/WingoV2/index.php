@@ -49,7 +49,7 @@
                                 <input type="hidden" name="expires" value="'.$expires.'" />
                                 <input id="boton" class="button" type="submit" value="Return to products">
                             </form>
-                                <iframe src="https://app.datorama.com/index.html#/page/dashboardpage/show?embedpage=b2755ebe-934b-4c97-a44d-17c83a25deff" style="border:0px" width="1100px" height="800px"></iframe>
+                                              <iframe src="https://platform.datorama.com/index.html#/page/dashboardpage/show?brandId=11601&dashboardId=56445&id=1205977&secureEmbed=true" style="border:0px" width="95%" height="800px"></iframe>
                             </div>
 
                         <!-- Scripts -->

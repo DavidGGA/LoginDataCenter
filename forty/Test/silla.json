@@ -1,0 +1,65 @@
+[
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "desktop",
+    "Resolución de pantalla": "1366x768",
+    "Cantidad de productos comprados": 26,
+    "Compras únicas": 6
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "desktop",
+    "Resolución de pantalla": "1440x900",
+    "Cantidad de productos comprados": 18,
+    "Compras únicas": 4
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "mobile",
+    "Resolución de pantalla": "360x640",
+    "Cantidad de productos comprados": 16,
+    "Compras únicas": 4
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "mobile",
+    "Resolución de pantalla": "375x667",
+    "Cantidad de productos comprados": 14,
+    "Compras únicas": 5
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "desktop",
+    "Resolución de pantalla": "1920x1080",
+    "Cantidad de productos comprados": 12,
+    "Compras únicas": 2
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "desktop",
+    "Resolución de pantalla": "1024x820",
+    "Cantidad de productos comprados": 6,
+    "Compras únicas": 0
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "desktop",
+    "Resolución de pantalla": "2560x1440",
+    "Cantidad de productos comprados": 3,
+    "Compras únicas": 2
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "mobile",
+    "Resolución de pantalla": "320x568",
+    "Cantidad de productos comprados": 3,
+    "Compras únicas": 4
+  },
+  {
+    "Producto": "Silla decorativa de plástico y madera negra",
+    "Categoría de dispositivo": "tablet",
+    "Resolución de pantalla": "768x1024",
+    "Cantidad de productos comprados": 1,
+    "Compras únicas": 1
+  }
+]
