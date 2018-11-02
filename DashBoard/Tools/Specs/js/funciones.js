@@ -42,7 +42,7 @@ $(document).ready(function() {
         var row = $(this),
             cloneRow = row.clone();
 
-        cloneRow.children('td:last-child').html('<input type="submit" value="Eliminar" style="font-size: 12px; width: 100px;" class="delete btn btn-warning">');
+        cloneRow.children('td:last-child').html('<input type="submit" value="Eliminar" style="font-size: 12px; width: 100px;" class="delete btn btn-warning noExl">');
 
         copyTable.append(cloneRow);
 

@@ -1,43 +1,55 @@
+<div align="center">
 <?php echo "<h1>Actualizar Perfil</h1>"; ?><br>
+  <div class="form-group" style="width:60%">
+    
+  
 <?= form_open("/controlador2/actualizarperfil/".$id) ?>
 <?php
 	$Mercado = array(
 			'name' => 'Mercado',
 			'placeholder' => 'EJ: US,JM,MX...',
+            'class' => 'form-control',
 			'value' => $actu[0]->Mercado,
 		);
 	$Sitio = array(
 			'name' => 'Sitio',
 			'placeholder' => 'EJ: DSP, Sojern, Tripadvisor...',
+            'class' => 'form-control',
 			'value' => $actu[0]->Sitio,
 		);
 	$Banner = array(
 			'name' => 'Banner',
 			'placeholder' => 'EJ: Box, Sky, Leaderboard...',
+            'class' => 'form-control',
 			'value' => $actu[0]->Banner,
 		);	
 	$Size = array(
 			'name' => 'Size',
 			'placeholder' => 'EJ: 300*250, 160*600, 4:3...',
+            'class' => 'form-control',
 			'value' => $actu[0]->Size,
 		);
 	$Formato = array(
 			'name' => 'Formato',
 			'placeholder' => 'png,jpg...',
+            'class' => 'form-control',
 			'value' => $actu[0]->Formato,
 		);
 	$Weight = array(
 			'name' => 'Weight',
-			//'placeholder' => 'EJ: 800*600',
+            'class' => 'form-control',
+			'placeholder' => 'EJ: 100MB, 1GB, 40KB...',
 			'value' => $actu[0]->Weight,
 		);
 	$ClickTag = array(
 			'name' => 'ClickTag',
 			'placeholder' => 'EJ: 100MB, 1GB, 40KB...',
+            'class' => 'form-control',
 			'value' => $actu[0]->ClickTag,
 		);	
 	$Observaciones = array(
 			'name' => 'Observaciones',
+            'class' => 'form-control',
 			'type' => 'text',
 			//'placeholder' => 'EJ: 1,2,3 etc.',
 			'value' => $actu[0]->Observaciones,
@@ -85,5 +97,7 @@
 	    	</a>
 
 	<?= form_close() ?>
+	</div>
+	</div>
 </body>
 </html>

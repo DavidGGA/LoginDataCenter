@@ -1,4 +1,6 @@
+<div align="center">
 <?php echo "<h1>Registro Specs</h1>"; ?><br>
+</div>
 <div class="error">
 	<?php echo validation_errors(); ?>
 </div>
@@ -7,6 +9,7 @@
 color: red;
 }
 </style>
+
 <?= form_open("/controlador2/procesar/") ?>
 <?PHP
 	$Mercado = array(
@@ -66,11 +69,12 @@ color: red;
 <?php /*= form_submit('','Editar Info') ?>
 <?= form_submit('','Consultar Info') ?> ||
 <?= form_submit('','Borrar Info') */ ?>-->
-<div class="contenedor" style="margin: 10px;">
+<div align="center" class="contenedor" style="margin: 10px;">
+  <div class="form-group" style="width:60%">
 <h5>Mercado</h5>
 
-<select name="mercado">
-	<option value="">Seleccionar</option>
+<select class="form-control" name="mercado">
+	<option align="center" value="">Seleccionar</option>
 	<option value="US">US</option>
 	<option value="LATAM">LATAM</option>
 	<option value="MX">MX</option>
@@ -80,7 +84,7 @@ color: red;
 <input type="text" name="mercado" placeholder="EJ: US,JM,MX otra cosa..." value="<?php echo set_value('$Mercado'); ?>" size="50" />
 -->
 <h5>Sitio</h5>
-<select name="sitio">
+<select class="form-control" name="sitio">
 	<option>Seleccionar</option>
 	<option value="TripAdvisor">TripAdvisor</option>
 	<option value="FACEBOOK">FACEBOOK</option>
@@ -94,7 +98,7 @@ color: red;
 <input type="text" name="sitio" placeholder="EJ: DSP, Sojern, Tripadvisor..." value="<?php echo set_value('$Sitio'); ?>" size="50" />
 -->
 <h5>Banner</h5>
-<select name="banner">
+<select class="form-control" name="banner">
 	<option>Seleccionar</option>
 	<option value="BOX">BOX</option>
 	<option value="SKY">SKY</option>
@@ -105,7 +109,7 @@ color: red;
 <input type="text" name="banner" placeholder="Box, Sky, Leaderboard..." value="<?php echo set_value('$Banner'); ?>" size="50" />
 -->
 <h5>Size<br>(width/large)</h5>
-<select name="size">
+<select class="form-control" name="size">
 	<option value="150x600">150x600</option>
 	<option value="180x150">180x150</option>
 	<option value="120x600">120x600</option>
@@ -127,7 +131,7 @@ color: red;
 <input type="text" name="size" placeholder="EJ: 300*250, 160*600, 4:3..." value="<?php echo set_value('$Size'); ?>" size="50"/>
 -->
 <h5>Formato</h5>
-<select name="formato">
+<select  class="form-control" name="formato">
 	<option value="jpg">jpg</option>
 	<option value="png">png</option>
 	<option value="text">text</option>
@@ -138,7 +142,7 @@ color: red;
 <input type="text" name="formato" placeholder="EJ: Png,jpg..." value="<?php echo set_value('$Formato'); ?>" size="50"/>
 -->
 <h5>Weight</h5>
-<input type="text" name="weight" placeholder="10MB - 234Kb">
+<input class="form-control" type="text" name="weight" placeholder="10MB - 234Kb">
 <!--
 <input type="text" name="weight" placeholder="" value="<?php echo set_value('$Weight'); ?>" size="50"/>
 -->
@@ -154,12 +158,12 @@ color: red;
 	<option value="Tag">Tag D</option>
 </select>
 -->
-<input type="text" name="clicktag" placeholder="Tag" value="<?php echo set_value('$ClickTag'); ?>" size="50"/>
+<input class="form-control" type="text" name="clicktag" placeholder="Tag" value="<?php echo set_value('$ClickTag'); ?>" size="50"/>
 
 <br>
 
 <h5>Observaciones</h5>
-<input type="text" name="observaciones" placeholder="http://www.unaurl.com" value="<?php echo set_value('$Observaciones'); ?>" size="50"/>
+<input class="form-control" type="text" name="observaciones" placeholder="http://www.unaurl.com" value="<?php echo set_value('$Observaciones'); ?>" size="50"/>
 <br><br>
 <!--<h5>###</h5>
 <input type="email" name="email" placeholder="Ej: correo@correo.com" value="<?php echo set_value('$EmailAddress'); ?>" size="50"/>-->
@@ -179,6 +183,7 @@ color: red;
 <input type="text" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" />-->
 <?= form_close() ?>
 <br>
+</div>
 </div>
 </body>
 </html>

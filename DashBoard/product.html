@@ -6,7 +6,10 @@
         Maia DataCenter
     </title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="./static/css/estilo.css" rel="stylesheet" type="text/css" />
+
+    <!-- <link rel="stylesheet" href="./static/css/estilo.css" /> -->
     <link rel="shortcut icon" href="./static/img/AriadnaLogo.png">
     <link rel="stylesheet" href="./static/css/normalize.css" />
     <!-- Compiled and minified CSS -->
@@ -30,9 +33,16 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TK446K5');
-
     </script>
     <!-- End Google Tag Manager -->
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5289409902556680",
+        enable_page_level_ads: true
+      });
+</script>
 </head>
 
 <body>
@@ -46,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="titular">
             <div>
-                <a class="button waves-effect waves-light " href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
+                <a id="logout" class="button waves-effect waves-light " href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
             </div>
         </div>
     </header>
@@ -94,12 +104,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {% endfor %}
         </div>
     </section>
-    <!-- Compiled and minified JavaScript -->
+
+      <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="./static/js/jquery-3.2.1.js"></script>
     <script src="./static/js/materialize.js"></script>
     <script>
         $(document).ready(function() {
             $('.collapsible').collapsible();
+            $(".modal").modal();
+
+            $("#logout").hover(function() {
+                $(".modal").modal('open');
+            });
         });
 
     </script>

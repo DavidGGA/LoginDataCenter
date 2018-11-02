@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="es-ES">
+    <head>
+        <title>
+        Segment Data Base
+        </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./../../../static/img/AriadnaLogo.png">
+        <link rel="stylesheet" href="./../../../static/css/normalize.css" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="../../../static/css/materialize.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../../../static/fonts/icomoon.ttf">
+        <link rel="stylesheet" href="../../../static/css/product.css" />
+        <!-- Google Tag Manager -->
+            <script>
+                (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-TK446K5');
+            </script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK446K5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <header>
+            <div class="logo">
+                <img src="./../../../static/img/DataCenterLogo.png" alt="DataCenter" />
+            </div>
+            <div class="titular">
+                <div>
+                    <a class="button waves-effect waves-light " href=./logout.php><i class="material-icons">settings_power</i>Logout</a>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Welcome user {{ username }}</a></li>
+            </ul>
+        </nav>
+        <section class="row posts">
+            <div class="col s12">
+                <ul id="tabs-swipe-demo" style="min-height: 60px !important" class="tabs">
+                    {% for name, Schemas in segmentSchemas %}
+                        <li class="tab"><a href="#test-swipe-{{name}}">{{name}}</a></li>     
+                    {% endfor %}
+                </ul>            
+                {% for name, Schemas in segmentSchemas %}
+                <div id="test-swipe-{{name}}" class="col s12">
+                    
+                  <ul class="collapsible" data-collapsible="accordion">
+                    {% for schema in Schemas %}
+                        <li>
+                          <div class="collapsible-header"><i class="material-icons"></i>{{schema}}</div>
+                          <div class="collapsible-body"><span></span> 
+                            <table border="1" class="bordered striped z-depth-4 center">
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone</td>
+                                  <td>E-mail</td>
+                                  <td>Received at</td>
+                                </tr>
+
+                                <tbody>
+                                    <tr>
+                                          <td>
+                                            <script>
+                                              var decrypted = CryptoJS.AES.decrypt("<?php echo $row["name"]; ?>", "abejaMaia");
+                                              var listo  = decrypted.toString(CryptoJS.enc.Utf8);
+                                              document.write(listo)
+                                            </script>
+                                          </td>
+                                          <td>
+                                            <script>
+                                              var decrypted = CryptoJS.AES.decrypt("<?php echo $row["phone"]; ?>", "abejaMaia");
+                                              var listo  = decrypted.toString(CryptoJS.enc.Utf8);
+                                              document.write(listo)
+                                            </script>
+                                          </td>
+                                          <td>
+                                            <script>
+                                              var decrypted = CryptoJS.AES.decrypt("<?php echo $row["email"]; ?>", "abejaMaia");
+                                              var listo  = decrypted.toString(CryptoJS.enc.Utf8);
+                                              document.write(listo)
+                                            </script>
+                                          </td>
+                                          <td>
+                                              <?php echo $row['received_at']; ?>
+                                          </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                        </li>
+                    {% endfor %}    
+                  </ul>
+                    {% endfor %}    
+                </div>            
+            </div>
+        </section>
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="../../../static/js/jquery-3.2.1.js"></script>
+        <script src="../../../static/js/materialize.js"></script>
+        <script>
+            $(document).ready(function() {
+            //$('.collapsible').collapsible();
+            $('ul.tabs').tabs('select_tab', 'tab_id');
+            $('ul.tabs').tabs({
+                swipeable : true
+               });
+            });
+        </script>
+    </body>
+</html>

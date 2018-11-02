@@ -59,7 +59,7 @@
 </form>
 
 <div align="center" class="buscadorON">
-<h4>Seleccionados:</h4>
+<h2>Seleccionados:</h2>
 <table id="selectsTable" class="table table-bordered table-condensed table-striped">
     <tbody>
         <tr class="success">
